@@ -1,422 +1,422 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IvyCommonIndicators = void 0;
-var IvyCommonIndicators;
-(function (IvyCommonIndicators) {
+exports.IvyTechnicalIndicators = void 0;
+var IvyTechnicalIndicators;
+(function (IvyTechnicalIndicators) {
     /**
      * Vector Absolute Value
      */
-    IvyCommonIndicators["ABS"] = "abs";
+    IvyTechnicalIndicators["ABS"] = "abs";
     /**
      * Vector Arccosine
      */
-    IvyCommonIndicators["ACOS"] = "acos";
+    IvyTechnicalIndicators["ACOS"] = "acos";
     /**
      * Accumulation/Distribution Line
      */
-    IvyCommonIndicators["AD"] = "ad";
+    IvyTechnicalIndicators["AD"] = "ad";
     /**
      * Vector Addition
      */
-    IvyCommonIndicators["ADD"] = "add";
+    IvyTechnicalIndicators["ADD"] = "add";
     /**
      * Accumulation/Distribution Oscillator
      */
-    IvyCommonIndicators["ADOSC"] = "adosc";
+    IvyTechnicalIndicators["ADOSC"] = "adosc";
     /**
      * Average Directional Movement Index
      */
-    IvyCommonIndicators["ADX"] = "adx";
+    IvyTechnicalIndicators["ADX"] = "adx";
     /**
      * Average Directional Movement Rating
      */
-    IvyCommonIndicators["ADXR"] = "adxr";
+    IvyTechnicalIndicators["ADXR"] = "adxr";
     /**
      * Awesome Oscillator
      */
-    IvyCommonIndicators["AO"] = "ao";
+    IvyTechnicalIndicators["AO"] = "ao";
     /**
      * Absolute Price Oscillator
      */
-    IvyCommonIndicators["APO"] = "apo";
+    IvyTechnicalIndicators["APO"] = "apo";
     /**
      * Aroon
      */
-    IvyCommonIndicators["AROON"] = "aroon";
+    IvyTechnicalIndicators["AROON"] = "aroon";
     /**
      * Aroon Oscillator
      */
-    IvyCommonIndicators["AROONOSC"] = "aroonosc";
+    IvyTechnicalIndicators["AROONOSC"] = "aroonosc";
     /**
      * Vector Arcsine
      */
-    IvyCommonIndicators["ASIN"] = "asin";
+    IvyTechnicalIndicators["ASIN"] = "asin";
     /**
      * Vector Arctangent
      */
-    IvyCommonIndicators["ATAN"] = "atan";
+    IvyTechnicalIndicators["ATAN"] = "atan";
     /**
      * Average True Range
      */
-    IvyCommonIndicators["ATR"] = "atr";
+    IvyTechnicalIndicators["ATR"] = "atr";
     /**
      * Average Price
      */
-    IvyCommonIndicators["AVGPRICE"] = "avgprice";
+    IvyTechnicalIndicators["AVGPRICE"] = "avgprice";
     /**
      * Bollinger Bands
      */
-    IvyCommonIndicators["BBANDS"] = "bbands";
+    IvyTechnicalIndicators["BBANDS"] = "bbands";
     /**
      * Balance of Power
      */
-    IvyCommonIndicators["BOP"] = "bop";
+    IvyTechnicalIndicators["BOP"] = "bop";
     /**
      * Commodity Channel Index
      */
-    IvyCommonIndicators["CCI"] = "cci";
+    IvyTechnicalIndicators["CCI"] = "cci";
     /**
      * Vector Ceiling
      */
-    IvyCommonIndicators["CEIL"] = "ceil";
+    IvyTechnicalIndicators["CEIL"] = "ceil";
     /**
      * Chande Momentum Oscillator
      */
-    IvyCommonIndicators["CMO"] = "cmo";
+    IvyTechnicalIndicators["CMO"] = "cmo";
     /**
      * Vector Cosine
      */
-    IvyCommonIndicators["COS"] = "cos";
+    IvyTechnicalIndicators["COS"] = "cos";
     /**
      * Vector Hyperbolic Cosine
      */
-    IvyCommonIndicators["COSH"] = "cosh";
+    IvyTechnicalIndicators["COSH"] = "cosh";
     /**
      * Crossany
      */
-    IvyCommonIndicators["CROSSANY"] = "crossany";
+    IvyTechnicalIndicators["CROSSANY"] = "crossany";
     /**
      * Crossover
      */
-    IvyCommonIndicators["CROSSOVER"] = "crossover";
+    IvyTechnicalIndicators["CROSSOVER"] = "crossover";
     /**
      * Chaikins Volatility
      */
-    IvyCommonIndicators["CVI"] = "cvi";
+    IvyTechnicalIndicators["CVI"] = "cvi";
     /**
      * Linear Decay
      */
-    IvyCommonIndicators["DECAY"] = "decay";
+    IvyTechnicalIndicators["DECAY"] = "decay";
     /**
      * Double Exponential Moving Average
      */
-    IvyCommonIndicators["DEMA"] = "dema";
+    IvyTechnicalIndicators["DEMA"] = "dema";
     /**
      * Directional Indicator
      */
-    IvyCommonIndicators["DI"] = "di";
+    IvyTechnicalIndicators["DI"] = "di";
     /**
      * Vector Division
      */
-    IvyCommonIndicators["DIV"] = "div";
+    IvyTechnicalIndicators["DIV"] = "div";
     /**
      * Directional Movement
      */
-    IvyCommonIndicators["DM"] = "dm";
+    IvyTechnicalIndicators["DM"] = "dm";
     /**
      * Detrended Price Oscillator
      */
-    IvyCommonIndicators["DPO"] = "dpo";
+    IvyTechnicalIndicators["DPO"] = "dpo";
     /**
      * Directional Movement Index
      */
-    IvyCommonIndicators["DX"] = "dx";
+    IvyTechnicalIndicators["DX"] = "dx";
     /**
      * Exponential Decay
      */
-    IvyCommonIndicators["EDECAY"] = "edecay";
+    IvyTechnicalIndicators["EDECAY"] = "edecay";
     /**
      * Exponential Moving Average
      */
-    IvyCommonIndicators["EMA"] = "ema";
+    IvyTechnicalIndicators["EMA"] = "ema";
     /**
      * Ease of Movement
      */
-    IvyCommonIndicators["EMV"] = "emv";
+    IvyTechnicalIndicators["EMV"] = "emv";
     /**
      * Vector Exponential
      */
-    IvyCommonIndicators["EXP"] = "exp";
+    IvyTechnicalIndicators["EXP"] = "exp";
     /**
      * Fisher Transform
      */
-    IvyCommonIndicators["FISHER"] = "fisher";
+    IvyTechnicalIndicators["FISHER"] = "fisher";
     /**
      * Vector Floor
      */
-    IvyCommonIndicators["FLOOR"] = "floor";
+    IvyTechnicalIndicators["FLOOR"] = "floor";
     /**
      * Forecast Oscillator
      */
-    IvyCommonIndicators["FOSC"] = "fosc";
+    IvyTechnicalIndicators["FOSC"] = "fosc";
     /**
      * Hull Moving Average
      */
-    IvyCommonIndicators["HMA"] = "hma";
+    IvyTechnicalIndicators["HMA"] = "hma";
     /**
      * Kaufman Adaptive Moving Average
      */
-    IvyCommonIndicators["KAMA"] = "kama";
+    IvyTechnicalIndicators["KAMA"] = "kama";
     /**
      * Klinger Volume Oscillator
      */
-    IvyCommonIndicators["KVO"] = "kvo";
+    IvyTechnicalIndicators["KVO"] = "kvo";
     /**
      * Lag
      */
-    IvyCommonIndicators["LAG"] = "lag";
+    IvyTechnicalIndicators["LAG"] = "lag";
     /**
      * Linear Regression
      */
-    IvyCommonIndicators["LINREG"] = "linreg";
+    IvyTechnicalIndicators["LINREG"] = "linreg";
     /**
      * Linear Regression Intercept
      */
-    IvyCommonIndicators["LINREGINTERCEPT"] = "linregintercept";
+    IvyTechnicalIndicators["LINREGINTERCEPT"] = "linregintercept";
     /**
      * Linear Regression Slope
      */
-    IvyCommonIndicators["LINREGSLOPE"] = "linregslope";
+    IvyTechnicalIndicators["LINREGSLOPE"] = "linregslope";
     /**
      * Vector Natural Log
      */
-    IvyCommonIndicators["LN"] = "ln";
+    IvyTechnicalIndicators["LN"] = "ln";
     /**
      * Vector Base-10 Log
      */
-    IvyCommonIndicators["LOG10"] = "log10";
+    IvyTechnicalIndicators["LOG10"] = "log10";
     /**
      * Moving Average Convergence/Divergence
      */
-    IvyCommonIndicators["MACD"] = "macd";
+    IvyTechnicalIndicators["MACD"] = "macd";
     /**
      * Market Facilitaion Index
      */
-    IvyCommonIndicators["MARKETFI"] = "marketfi";
+    IvyTechnicalIndicators["MARKETFI"] = "marketfi";
     /**
      * Mass Index
      */
-    IvyCommonIndicators["MASS"] = "mass";
+    IvyTechnicalIndicators["MASS"] = "mass";
     /**
      * Maximum In Period
      */
-    IvyCommonIndicators["MAX"] = "max";
+    IvyTechnicalIndicators["MAX"] = "max";
     /**
      * Mean Deviation Over Period
      */
-    IvyCommonIndicators["MD"] = "md";
+    IvyTechnicalIndicators["MD"] = "md";
     /**
      * Median Price
      */
-    IvyCommonIndicators["MEDPRICE"] = "medprice";
+    IvyTechnicalIndicators["MEDPRICE"] = "medprice";
     /**
      * Money Flow Index
      */
-    IvyCommonIndicators["MFI"] = "mfi";
+    IvyTechnicalIndicators["MFI"] = "mfi";
     /**
      * Minimum in Period
      */
-    IvyCommonIndicators["MIN"] = "min";
+    IvyTechnicalIndicators["MIN"] = "min";
     /**
      * Momentum
      */
-    IvyCommonIndicators["MOM"] = "mom";
+    IvyTechnicalIndicators["MOM"] = "mom";
     /**
      * Mesa Sine Wave
      */
-    IvyCommonIndicators["MSW"] = "msw";
+    IvyTechnicalIndicators["MSW"] = "msw";
     /**
      * Vector Multiplication
      */
-    IvyCommonIndicators["MUL"] = "mul";
+    IvyTechnicalIndicators["MUL"] = "mul";
     /**
      * Normalized Average True Range
      */
-    IvyCommonIndicators["NATR"] = "natr";
+    IvyTechnicalIndicators["NATR"] = "natr";
     /**
      * Negative Volume Index
      */
-    IvyCommonIndicators["NVI"] = "nvi";
+    IvyTechnicalIndicators["NVI"] = "nvi";
     /**
      * On Balance Volume
      */
-    IvyCommonIndicators["OBV"] = "obv";
+    IvyTechnicalIndicators["OBV"] = "obv";
     /**
      * Percentage Price Oscillator
      */
-    IvyCommonIndicators["PPO"] = "ppo";
+    IvyTechnicalIndicators["PPO"] = "ppo";
     /**
      * Parabolic SAR
      */
-    IvyCommonIndicators["PSAR"] = "psar";
+    IvyTechnicalIndicators["PSAR"] = "psar";
     /**
      * Positive Volume Index
      */
-    IvyCommonIndicators["PVI"] = "pvi";
+    IvyTechnicalIndicators["PVI"] = "pvi";
     /**
      * Qstick
      */
-    IvyCommonIndicators["QSTICK"] = "qstick";
+    IvyTechnicalIndicators["QSTICK"] = "qstick";
     /**
      * Rate of Change
      */
-    IvyCommonIndicators["ROC"] = "roc";
+    IvyTechnicalIndicators["ROC"] = "roc";
     /**
      * Rate of Change Ratio
      */
-    IvyCommonIndicators["ROCR"] = "rocr";
+    IvyTechnicalIndicators["ROCR"] = "rocr";
     /**
      * Vector Round
      */
-    IvyCommonIndicators["ROUND"] = "round";
+    IvyTechnicalIndicators["ROUND"] = "round";
     /**
      * Relative Strength Index
      */
-    IvyCommonIndicators["RSI"] = "rsi";
+    IvyTechnicalIndicators["RSI"] = "rsi";
     /**
      * Vector Sin
      */
-    IvyCommonIndicators["SIN"] = "sin";
+    IvyTechnicalIndicators["SIN"] = "sin";
     /**
      * Vector Hyperbolic Sin
      */
-    IvyCommonIndicators["SINH"] = "sinh";
+    IvyTechnicalIndicators["SINH"] = "sinh";
     /**
      * Simple Moving Average
      */
-    IvyCommonIndicators["SMA"] = "sma";
+    IvyTechnicalIndicators["SMA"] = "sma";
     /**
      * Vector Square Root
      */
-    IvyCommonIndicators["SQRT"] = "sqrt";
+    IvyTechnicalIndicators["SQRT"] = "sqrt";
     /**
      * Standard Deviation Over Period
      */
-    IvyCommonIndicators["STDDEV"] = "stddev";
+    IvyTechnicalIndicators["STDDEV"] = "stddev";
     /**
      * Standard Error Over Period
      */
-    IvyCommonIndicators["STDERR"] = "stderr";
+    IvyTechnicalIndicators["STDERR"] = "stderr";
     /**
      * Stochastic Oscillator
      */
-    IvyCommonIndicators["STOCH"] = "stoch";
+    IvyTechnicalIndicators["STOCH"] = "stoch";
     /**
      * Stochastic RSI
      */
-    IvyCommonIndicators["STOCHRSI"] = "stochrsi";
+    IvyTechnicalIndicators["STOCHRSI"] = "stochrsi";
     /**
      * Vector Subtraction
      */
-    IvyCommonIndicators["SUB"] = "sub";
+    IvyTechnicalIndicators["SUB"] = "sub";
     /**
      * Sum Over Period
      */
-    IvyCommonIndicators["SUM"] = "sum";
+    IvyTechnicalIndicators["SUM"] = "sum";
     /**
      * Vector Tangent
      */
-    IvyCommonIndicators["TAN"] = "tan";
+    IvyTechnicalIndicators["TAN"] = "tan";
     /**
      * Vector Hyperbolic Tangent
      */
-    IvyCommonIndicators["TANH"] = "tanh";
+    IvyTechnicalIndicators["TANH"] = "tanh";
     /**
      * Triple Exponential Moving Average
      */
-    IvyCommonIndicators["TEMA"] = "tema";
+    IvyTechnicalIndicators["TEMA"] = "tema";
     /**
      * Vector Degree Conversion
      */
-    IvyCommonIndicators["TODEG"] = "todeg";
+    IvyTechnicalIndicators["TODEG"] = "todeg";
     /**
      * Vector Radian Conversion
      */
-    IvyCommonIndicators["TORAD"] = "torad";
+    IvyTechnicalIndicators["TORAD"] = "torad";
     /**
      * True Range
      */
-    IvyCommonIndicators["TR"] = "tr";
+    IvyTechnicalIndicators["TR"] = "tr";
     /**
      * Triangular Moving Average
      */
-    IvyCommonIndicators["TRIMA"] = "trima";
+    IvyTechnicalIndicators["TRIMA"] = "trima";
     /**
      * Trix
      */
-    IvyCommonIndicators["TRIX"] = "trix";
+    IvyTechnicalIndicators["TRIX"] = "trix";
     /**
      * Vector Truncate
      */
-    IvyCommonIndicators["TRUNC"] = "trunc";
+    IvyTechnicalIndicators["TRUNC"] = "trunc";
     /**
      * Time Series Forecast
      */
-    IvyCommonIndicators["TSF"] = "tsf";
+    IvyTechnicalIndicators["TSF"] = "tsf";
     /**
      * Typical Price
      */
-    IvyCommonIndicators["TYPPRICE"] = "typprice";
+    IvyTechnicalIndicators["TYPPRICE"] = "typprice";
     /**
      * Ultimate Oscillator
      */
-    IvyCommonIndicators["ULTOSC"] = "ultosc";
+    IvyTechnicalIndicators["ULTOSC"] = "ultosc";
     /**
      * Variance Over Period
      */
-    IvyCommonIndicators["VAR"] = "var";
+    IvyTechnicalIndicators["VAR"] = "var";
     /**
      * Vertical Horizontal Filter
      */
-    IvyCommonIndicators["VHF"] = "vhf";
+    IvyTechnicalIndicators["VHF"] = "vhf";
     /**
      * Variable Index Dynamic Average
      */
-    IvyCommonIndicators["VIDYA"] = "vidya";
+    IvyTechnicalIndicators["VIDYA"] = "vidya";
     /**
      * Annualized Historical Volatility
      */
-    IvyCommonIndicators["VOLATILITY"] = "volatility";
+    IvyTechnicalIndicators["VOLATILITY"] = "volatility";
     /**
      * Volume Oscillator
      */
-    IvyCommonIndicators["VOSC"] = "vosc";
+    IvyTechnicalIndicators["VOSC"] = "vosc";
     /**
      * Volume Weighted Moving Average
      */
-    IvyCommonIndicators["VWMA"] = "vwma";
+    IvyTechnicalIndicators["VWMA"] = "vwma";
     /**
      * Williams Accumulation/Distribution
      */
-    IvyCommonIndicators["WAD"] = "wad";
+    IvyTechnicalIndicators["WAD"] = "wad";
     /**
      * Weighted Close Price
      */
-    IvyCommonIndicators["WCPRICE"] = "wcprice";
+    IvyTechnicalIndicators["WCPRICE"] = "wcprice";
     /**
      * Wilders Smoothing
      */
-    IvyCommonIndicators["WILDERS"] = "wilders";
+    IvyTechnicalIndicators["WILDERS"] = "wilders";
     /**
      * Williams %R
      */
-    IvyCommonIndicators["WILLR"] = "willr";
+    IvyTechnicalIndicators["WILLR"] = "willr";
     /**
      * Weighted Moving Average
      */
-    IvyCommonIndicators["WMA"] = "wma";
+    IvyTechnicalIndicators["WMA"] = "wma";
     /**
      * Zero-Lag Exponential Moving Average
      */
-    IvyCommonIndicators["ZLEMA"] = "zlema";
-})(IvyCommonIndicators = exports.IvyCommonIndicators || (exports.IvyCommonIndicators = {}));
+    IvyTechnicalIndicators["ZLEMA"] = "zlema";
+})(IvyTechnicalIndicators = exports.IvyTechnicalIndicators || (exports.IvyTechnicalIndicators = {}));

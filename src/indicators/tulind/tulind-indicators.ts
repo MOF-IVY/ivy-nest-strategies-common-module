@@ -1,9 +1,9 @@
-import { IvyCommonIndicators } from "../indicators.enum";
+import { IvyTechnicalIndicators } from "../indicators.enum";
 import { OHLCV, OHLCVPositions } from "@mof-ivy/ivy-node-sdk";
 import { TulindIndicatorWrapper } from "./tulind-indicator-wrapper.model";
 
 export class ABS extends TulindIndicatorWrapper<{ abs: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ABS;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ABS;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -16,7 +16,7 @@ export class ABS extends TulindIndicatorWrapper<{ abs: number[] }> {
 }
 
 export class ACOS extends TulindIndicatorWrapper<{ acos: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ACOS;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ACOS;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -29,7 +29,7 @@ export class ACOS extends TulindIndicatorWrapper<{ acos: number[] }> {
 }
 
 export class AD extends TulindIndicatorWrapper<{ ad: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.AD;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.AD;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -50,7 +50,7 @@ export class AD extends TulindIndicatorWrapper<{ ad: number[] }> {
 }
 
 export class ADD extends TulindIndicatorWrapper<{ add: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ADD;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ADD;
 
   constructor(readonly inputA: number[], readonly inputB: number[]) {
     super([inputA, inputB], []);
@@ -63,7 +63,7 @@ export class ADD extends TulindIndicatorWrapper<{ add: number[] }> {
 }
 
 export class ADOSC extends TulindIndicatorWrapper<{ adosc: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ADOSC;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ADOSC;
 
   constructor(
     readonly input: OHLCV[],
@@ -87,7 +87,7 @@ export class ADOSC extends TulindIndicatorWrapper<{ adosc: number[] }> {
 }
 
 export class ADX extends TulindIndicatorWrapper<{ adx: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ADX;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ADX;
 
   constructor(readonly input: OHLCV[], readonly conf: { period: number }) {
     super(
@@ -107,7 +107,7 @@ export class ADX extends TulindIndicatorWrapper<{ adx: number[] }> {
 }
 
 export class ADXR extends TulindIndicatorWrapper<{ adxr: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ADXR;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ADXR;
 
   constructor(readonly input: OHLCV[], readonly conf: { period: number }) {
     super(
@@ -127,7 +127,7 @@ export class ADXR extends TulindIndicatorWrapper<{ adxr: number[] }> {
 }
 
 export class AO extends TulindIndicatorWrapper<{ ao: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.AO;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.AO;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -146,7 +146,7 @@ export class AO extends TulindIndicatorWrapper<{ ao: number[] }> {
 }
 
 export class APO extends TulindIndicatorWrapper<{ apo: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.APO;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.APO;
 
   constructor(
     readonly input: number[],
@@ -165,7 +165,7 @@ export class AROON extends TulindIndicatorWrapper<{
   aroon_up: number[];
   aroon_down: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.AROON;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.AROON;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -184,7 +184,7 @@ export class AROON extends TulindIndicatorWrapper<{
 }
 
 export class AROONOSC extends TulindIndicatorWrapper<{ aroonosc: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.AROONOSC;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.AROONOSC;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -203,7 +203,7 @@ export class AROONOSC extends TulindIndicatorWrapper<{ aroonosc: number[] }> {
 }
 
 export class ASIN extends TulindIndicatorWrapper<{ asin: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ASIN;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ASIN;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -216,7 +216,7 @@ export class ASIN extends TulindIndicatorWrapper<{ asin: number[] }> {
 }
 
 export class ATAN extends TulindIndicatorWrapper<{ atan: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ATAN;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ATAN;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -229,7 +229,7 @@ export class ATAN extends TulindIndicatorWrapper<{ atan: number[] }> {
 }
 
 export class ATR extends TulindIndicatorWrapper<{ atr: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ATR;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ATR;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -249,7 +249,7 @@ export class ATR extends TulindIndicatorWrapper<{ atr: number[] }> {
 }
 
 export class AVGPRICE extends TulindIndicatorWrapper<{ avgprice: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.AVGPRICE;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.AVGPRICE;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -274,7 +274,7 @@ export class BBANDS extends TulindIndicatorWrapper<{
   bbands_middle: number[];
   bbands_upper: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.BBANDS;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.BBANDS;
 
   constructor(
     readonly input: number[],
@@ -294,7 +294,7 @@ export class BBANDS extends TulindIndicatorWrapper<{
 }
 
 export class BOP extends TulindIndicatorWrapper<{ bop: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.BOP;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.BOP;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -315,7 +315,7 @@ export class BOP extends TulindIndicatorWrapper<{ bop: number[] }> {
 }
 
 export class CCI extends TulindIndicatorWrapper<{ cci: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.CCI;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.CCI;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -335,7 +335,7 @@ export class CCI extends TulindIndicatorWrapper<{ cci: number[] }> {
 }
 
 export class CEIL extends TulindIndicatorWrapper<{ ceil: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.CEIL;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.CEIL;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -348,7 +348,7 @@ export class CEIL extends TulindIndicatorWrapper<{ ceil: number[] }> {
 }
 
 export class CMO extends TulindIndicatorWrapper<{ cmo: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.CMO;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.CMO;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -361,7 +361,7 @@ export class CMO extends TulindIndicatorWrapper<{ cmo: number[] }> {
 }
 
 export class COS extends TulindIndicatorWrapper<{ cos: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.COS;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.COS;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -374,7 +374,7 @@ export class COS extends TulindIndicatorWrapper<{ cos: number[] }> {
 }
 
 export class COSH extends TulindIndicatorWrapper<{ cosh: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.COSH;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.COSH;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -387,7 +387,7 @@ export class COSH extends TulindIndicatorWrapper<{ cosh: number[] }> {
 }
 
 export class CROSSANY extends TulindIndicatorWrapper<{ crossany: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.CROSSANY;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.CROSSANY;
 
   constructor(readonly inputA: number[], readonly inputB: number[]) {
     super([inputA, inputB], []);
@@ -400,7 +400,7 @@ export class CROSSANY extends TulindIndicatorWrapper<{ crossany: number[] }> {
 }
 
 export class CROSSOVER extends TulindIndicatorWrapper<{ crossover: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.CROSSOVER;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.CROSSOVER;
 
   constructor(readonly inputA: number[], readonly inputB: number[]) {
     super([inputA, inputB], []);
@@ -413,7 +413,7 @@ export class CROSSOVER extends TulindIndicatorWrapper<{ crossover: number[] }> {
 }
 
 export class CVI extends TulindIndicatorWrapper<{ cvi: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.CVI;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.CVI;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -432,7 +432,7 @@ export class CVI extends TulindIndicatorWrapper<{ cvi: number[] }> {
 }
 
 export class DECAY extends TulindIndicatorWrapper<{ decay: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.DECAY;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.DECAY;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -445,7 +445,7 @@ export class DECAY extends TulindIndicatorWrapper<{ decay: number[] }> {
 }
 
 export class DEMA extends TulindIndicatorWrapper<{ dema: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.DEMA;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.DEMA;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -461,7 +461,7 @@ export class DI extends TulindIndicatorWrapper<{
   plus_di: number[];
   minus_di: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.DI;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.DI;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -481,7 +481,7 @@ export class DI extends TulindIndicatorWrapper<{
 }
 
 export class DIV extends TulindIndicatorWrapper<{ div: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.DIV;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.DIV;
 
   constructor(readonly inputA: number[], readonly inputB: number[]) {
     super([inputA, inputB], []);
@@ -497,7 +497,7 @@ export class DM extends TulindIndicatorWrapper<{
   dm_plus: number[];
   dm_minus: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.DM;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.DM;
 
   constructor(readonly input: OHLCV[], readonly conf: { period: number }) {
     super(
@@ -516,7 +516,7 @@ export class DM extends TulindIndicatorWrapper<{
 }
 
 export class DPO extends TulindIndicatorWrapper<{ dpo: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.DPO;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.DPO;
 
   constructor(readonly input: number[], readonly conf: { period: number }) {
     super([input], [conf.period]);
@@ -529,7 +529,7 @@ export class DPO extends TulindIndicatorWrapper<{ dpo: number[] }> {
 }
 
 export class DX extends TulindIndicatorWrapper<{ dx: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.DX;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.DX;
 
   constructor(readonly input: OHLCV[], readonly conf: { period: number }) {
     super(
@@ -549,7 +549,7 @@ export class DX extends TulindIndicatorWrapper<{ dx: number[] }> {
 }
 
 export class EDECAY extends TulindIndicatorWrapper<{ edecay: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.EDECAY;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.EDECAY;
 
   constructor(readonly input: number[], readonly conf: { period: number }) {
     super([input], [conf.period]);
@@ -562,7 +562,7 @@ export class EDECAY extends TulindIndicatorWrapper<{ edecay: number[] }> {
 }
 
 export class EMA extends TulindIndicatorWrapper<{ ema: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.EMA;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.EMA;
 
   constructor(readonly input: number[], readonly conf: { period: number }) {
     super([input], [conf.period]);
@@ -575,7 +575,7 @@ export class EMA extends TulindIndicatorWrapper<{ ema: number[] }> {
 }
 
 export class EMV extends TulindIndicatorWrapper<{ emv: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.EMV;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.EMV;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -595,7 +595,7 @@ export class EMV extends TulindIndicatorWrapper<{ emv: number[] }> {
 }
 
 export class EXP extends TulindIndicatorWrapper<{ exp: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.EXP;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.EXP;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -611,7 +611,7 @@ export class FISHER extends TulindIndicatorWrapper<{
   fisher: number[];
   fisher_signal: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.FISHER;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.FISHER;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -630,7 +630,7 @@ export class FISHER extends TulindIndicatorWrapper<{
 }
 
 export class FLOOR extends TulindIndicatorWrapper<{ floor: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.FLOOR;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.FLOOR;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -643,7 +643,7 @@ export class FLOOR extends TulindIndicatorWrapper<{ floor: number[] }> {
 }
 
 export class FOSC extends TulindIndicatorWrapper<{ fosc: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.FOSC;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.FOSC;
 
   constructor(readonly input: number[], readonly conf: { period: number }) {
     super([input], [conf.period]);
@@ -656,7 +656,7 @@ export class FOSC extends TulindIndicatorWrapper<{ fosc: number[] }> {
 }
 
 export class HMA extends TulindIndicatorWrapper<{ hma: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.HMA;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.HMA;
 
   constructor(readonly input: number[], readonly conf: { period: number }) {
     super([input], [conf.period]);
@@ -669,7 +669,7 @@ export class HMA extends TulindIndicatorWrapper<{ hma: number[] }> {
 }
 
 export class KAMA extends TulindIndicatorWrapper<{ kama: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.KAMA;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.KAMA;
 
   constructor(readonly input: number[], readonly conf: { period: number }) {
     super([input], [conf.period]);
@@ -682,7 +682,7 @@ export class KAMA extends TulindIndicatorWrapper<{ kama: number[] }> {
 }
 
 export class KVO extends TulindIndicatorWrapper<{ kvo: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.KVO;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.KVO;
 
   constructor(
     readonly input: OHLCV[],
@@ -706,7 +706,7 @@ export class KVO extends TulindIndicatorWrapper<{ kvo: number[] }> {
 }
 
 export class LAG extends TulindIndicatorWrapper<{ lag: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.LAG;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.LAG;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -719,7 +719,7 @@ export class LAG extends TulindIndicatorWrapper<{ lag: number[] }> {
 }
 
 export class LINREG extends TulindIndicatorWrapper<{ linreg: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.LINREG;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.LINREG;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -734,7 +734,8 @@ export class LINREG extends TulindIndicatorWrapper<{ linreg: number[] }> {
 export class LINREGINTERCEPT extends TulindIndicatorWrapper<{
   linregintercept: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.LINREGINTERCEPT;
+  protected readonly tulindIndicatorName =
+    IvyTechnicalIndicators.LINREGINTERCEPT;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -749,7 +750,7 @@ export class LINREGINTERCEPT extends TulindIndicatorWrapper<{
 export class LINREGSLOPE extends TulindIndicatorWrapper<{
   linregslope: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.LINREGSLOPE;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.LINREGSLOPE;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -762,7 +763,7 @@ export class LINREGSLOPE extends TulindIndicatorWrapper<{
 }
 
 export class LN extends TulindIndicatorWrapper<{ ln: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.LN;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.LN;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -775,7 +776,7 @@ export class LN extends TulindIndicatorWrapper<{ ln: number[] }> {
 }
 
 export class LOG10 extends TulindIndicatorWrapper<{ log10: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.LOG10;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.LOG10;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -792,7 +793,7 @@ export class MACD extends TulindIndicatorWrapper<{
   macd_signal: number[];
   macd_histogram: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.MACD;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.MACD;
 
   constructor(
     readonly input: number[],
@@ -812,7 +813,7 @@ export class MACD extends TulindIndicatorWrapper<{
 }
 
 export class MARKETFI extends TulindIndicatorWrapper<{ marketfi: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.MARKETFI;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.MARKETFI;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -834,7 +835,7 @@ export class MARKETFI extends TulindIndicatorWrapper<{ marketfi: number[] }> {
 }
 
 export class MASS extends TulindIndicatorWrapper<{ mass: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.MASS;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.MASS;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -855,7 +856,7 @@ export class MASS extends TulindIndicatorWrapper<{ mass: number[] }> {
 }
 
 export class MAX extends TulindIndicatorWrapper<{ max: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.MAX;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.MAX;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -870,7 +871,7 @@ export class MAX extends TulindIndicatorWrapper<{ max: number[] }> {
 }
 
 export class MD extends TulindIndicatorWrapper<{ md: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.MD;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.MD;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -885,7 +886,7 @@ export class MD extends TulindIndicatorWrapper<{ md: number[] }> {
 }
 
 export class MEDPRICE extends TulindIndicatorWrapper<{ medprice: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.MEDPRICE;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.MEDPRICE;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -906,7 +907,7 @@ export class MEDPRICE extends TulindIndicatorWrapper<{ medprice: number[] }> {
 }
 
 export class MFI extends TulindIndicatorWrapper<{ mfi: number[] }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.MFI;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.MFI;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -931,7 +932,7 @@ export class MFI extends TulindIndicatorWrapper<{ mfi: number[] }> {
 export class MIN extends TulindIndicatorWrapper<{
   min: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.MIN;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.MIN;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -948,7 +949,7 @@ export class MIN extends TulindIndicatorWrapper<{
 export class MOM extends TulindIndicatorWrapper<{
   mom: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.MOM;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.MOM;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -966,7 +967,7 @@ export class MSW extends TulindIndicatorWrapper<{
   msw_sine: number[];
   msw_lead: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.MSW;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.MSW;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -984,7 +985,7 @@ export class MSW extends TulindIndicatorWrapper<{
 export class MUL extends TulindIndicatorWrapper<{
   mul: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.MUL;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.MUL;
 
   constructor(readonly inputA: number[], inputB: number[]) {
     super([inputA, inputB], []);
@@ -1001,7 +1002,7 @@ export class MUL extends TulindIndicatorWrapper<{
 export class NATR extends TulindIndicatorWrapper<{
   natr: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.NATR;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.NATR;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -1025,7 +1026,7 @@ export class NATR extends TulindIndicatorWrapper<{
 export class NVI extends TulindIndicatorWrapper<{
   nvi: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.NVI;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.NVI;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -1048,7 +1049,7 @@ export class NVI extends TulindIndicatorWrapper<{
 export class OBV extends TulindIndicatorWrapper<{
   obv: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.OBV;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.OBV;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -1071,7 +1072,7 @@ export class OBV extends TulindIndicatorWrapper<{
 export class PPO extends TulindIndicatorWrapper<{
   ppo: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.PPO;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.PPO;
 
   constructor(
     readonly input: number[],
@@ -1091,7 +1092,7 @@ export class PPO extends TulindIndicatorWrapper<{
 export class PSAR extends TulindIndicatorWrapper<{
   psar: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.PSAR;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.PSAR;
 
   constructor(
     readonly input: OHLCV[],
@@ -1117,7 +1118,7 @@ export class PSAR extends TulindIndicatorWrapper<{
 export class PVI extends TulindIndicatorWrapper<{
   pvi: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.PVI;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.PVI;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -1140,7 +1141,7 @@ export class PVI extends TulindIndicatorWrapper<{
 export class QSTICK extends TulindIndicatorWrapper<{
   qstick: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.QSTICK;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.QSTICK;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -1163,7 +1164,7 @@ export class QSTICK extends TulindIndicatorWrapper<{
 export class ROC extends TulindIndicatorWrapper<{
   roc: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ROC;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ROC;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1180,7 +1181,7 @@ export class ROC extends TulindIndicatorWrapper<{
 export class ROCR extends TulindIndicatorWrapper<{
   rocr: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ROCR;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ROCR;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1197,7 +1198,7 @@ export class ROCR extends TulindIndicatorWrapper<{
 export class ROUND extends TulindIndicatorWrapper<{
   round: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ROUND;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ROUND;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -1214,7 +1215,7 @@ export class ROUND extends TulindIndicatorWrapper<{
 export class RSI extends TulindIndicatorWrapper<{
   rsi: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.RSI;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.RSI;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1231,7 +1232,7 @@ export class RSI extends TulindIndicatorWrapper<{
 export class SIN extends TulindIndicatorWrapper<{
   sin: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.SIN;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.SIN;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -1248,7 +1249,7 @@ export class SIN extends TulindIndicatorWrapper<{
 export class SINH extends TulindIndicatorWrapper<{
   sinh: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.SINH;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.SINH;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -1265,7 +1266,7 @@ export class SINH extends TulindIndicatorWrapper<{
 export class SMA extends TulindIndicatorWrapper<{
   sma: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.SMA;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.SMA;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1282,7 +1283,7 @@ export class SMA extends TulindIndicatorWrapper<{
 export class SQRT extends TulindIndicatorWrapper<{
   sqrt: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.SQRT;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.SQRT;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -1299,7 +1300,7 @@ export class SQRT extends TulindIndicatorWrapper<{
 export class STDDEV extends TulindIndicatorWrapper<{
   stddev: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.STDDEV;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.STDDEV;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1316,7 +1317,7 @@ export class STDDEV extends TulindIndicatorWrapper<{
 export class STDERR extends TulindIndicatorWrapper<{
   stderr: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.STDERR;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.STDERR;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1334,7 +1335,7 @@ export class STOCH extends TulindIndicatorWrapper<{
   stoch_k: number[];
   stoch_d: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.STOCH;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.STOCH;
 
   constructor(
     readonly input: OHLCV[],
@@ -1362,7 +1363,7 @@ export class STOCH extends TulindIndicatorWrapper<{
 export class STOCHRSI extends TulindIndicatorWrapper<{
   stochrsi: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.STOCHRSI;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.STOCHRSI;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1379,7 +1380,7 @@ export class STOCHRSI extends TulindIndicatorWrapper<{
 export class SUB extends TulindIndicatorWrapper<{
   sub: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.SUB;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.SUB;
 
   constructor(readonly inputA: number[], inputB: number[]) {
     super([inputA, inputB], []);
@@ -1396,7 +1397,7 @@ export class SUB extends TulindIndicatorWrapper<{
 export class SUM extends TulindIndicatorWrapper<{
   sum: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.SUM;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.SUM;
 
   constructor(
     readonly inputA: number[],
@@ -1417,7 +1418,7 @@ export class SUM extends TulindIndicatorWrapper<{
 export class TAN extends TulindIndicatorWrapper<{
   tan: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.TAN;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.TAN;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -1434,7 +1435,7 @@ export class TAN extends TulindIndicatorWrapper<{
 export class TANH extends TulindIndicatorWrapper<{
   tanh: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.TANH;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.TANH;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -1451,7 +1452,7 @@ export class TANH extends TulindIndicatorWrapper<{
 export class TEMA extends TulindIndicatorWrapper<{
   tema: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.TEMA;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.TEMA;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1468,7 +1469,7 @@ export class TEMA extends TulindIndicatorWrapper<{
 export class TODEG extends TulindIndicatorWrapper<{
   todeg: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.TODEG;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.TODEG;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -1485,7 +1486,7 @@ export class TODEG extends TulindIndicatorWrapper<{
 export class TORAD extends TulindIndicatorWrapper<{
   torad: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.TORAD;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.TORAD;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -1502,7 +1503,7 @@ export class TORAD extends TulindIndicatorWrapper<{
 export class TR extends TulindIndicatorWrapper<{
   tr: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.TR;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.TR;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -1526,7 +1527,7 @@ export class TR extends TulindIndicatorWrapper<{
 export class TRIMA extends TulindIndicatorWrapper<{
   trima: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.TRIMA;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.TRIMA;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1543,7 +1544,7 @@ export class TRIMA extends TulindIndicatorWrapper<{
 export class TRIX extends TulindIndicatorWrapper<{
   trix: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.TRIX;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.TRIX;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1560,7 +1561,7 @@ export class TRIX extends TulindIndicatorWrapper<{
 export class TRUNC extends TulindIndicatorWrapper<{
   trunc: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.TRUNC;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.TRUNC;
 
   constructor(readonly input: number[]) {
     super([input], []);
@@ -1577,7 +1578,7 @@ export class TRUNC extends TulindIndicatorWrapper<{
 export class TSF extends TulindIndicatorWrapper<{
   tsf: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.TSF;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.TSF;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1594,7 +1595,7 @@ export class TSF extends TulindIndicatorWrapper<{
 export class TYPPRICE extends TulindIndicatorWrapper<{
   typprice: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.TYPPRICE;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.TYPPRICE;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -1618,7 +1619,7 @@ export class TYPPRICE extends TulindIndicatorWrapper<{
 export class ULTOSC extends TulindIndicatorWrapper<{
   ultosc: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ULTOSC;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ULTOSC;
 
   constructor(
     readonly input: OHLCV[],
@@ -1645,7 +1646,7 @@ export class ULTOSC extends TulindIndicatorWrapper<{
 export class VAR extends TulindIndicatorWrapper<{
   var: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.VAR;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.VAR;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1662,7 +1663,7 @@ export class VAR extends TulindIndicatorWrapper<{
 export class VHF extends TulindIndicatorWrapper<{
   vhf: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.VHF;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.VHF;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1679,7 +1680,7 @@ export class VHF extends TulindIndicatorWrapper<{
 export class VIDYA extends TulindIndicatorWrapper<{
   vidya: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.VIDYA;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.VIDYA;
 
   constructor(
     readonly input: number[],
@@ -1699,7 +1700,7 @@ export class VIDYA extends TulindIndicatorWrapper<{
 export class VOLATILITY extends TulindIndicatorWrapper<{
   volatility: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.VOLATILITY;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.VOLATILITY;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1716,7 +1717,7 @@ export class VOLATILITY extends TulindIndicatorWrapper<{
 export class VOSC extends TulindIndicatorWrapper<{
   vosc: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.VOSC;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.VOSC;
 
   constructor(
     readonly input: number[],
@@ -1736,7 +1737,7 @@ export class VOSC extends TulindIndicatorWrapper<{
 export class VWMA extends TulindIndicatorWrapper<{
   vwma: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.VWMA;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.VWMA;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -1759,7 +1760,7 @@ export class VWMA extends TulindIndicatorWrapper<{
 export class WAD extends TulindIndicatorWrapper<{
   wad: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.WAD;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.WAD;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -1783,7 +1784,7 @@ export class WAD extends TulindIndicatorWrapper<{
 export class WCPRICE extends TulindIndicatorWrapper<{
   wcprice: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.WCPRICE;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.WCPRICE;
 
   constructor(readonly input: OHLCV[]) {
     super(
@@ -1807,7 +1808,7 @@ export class WCPRICE extends TulindIndicatorWrapper<{
 export class WILDERS extends TulindIndicatorWrapper<{
   wilders: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.WILDERS;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.WILDERS;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1824,7 +1825,7 @@ export class WILDERS extends TulindIndicatorWrapper<{
 export class WILLR extends TulindIndicatorWrapper<{
   willr: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.WILLR;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.WILLR;
 
   constructor(readonly input: OHLCV[], conf: { period: number }) {
     super(
@@ -1848,7 +1849,7 @@ export class WILLR extends TulindIndicatorWrapper<{
 export class WMA extends TulindIndicatorWrapper<{
   wma: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.WMA;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.WMA;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);
@@ -1865,7 +1866,7 @@ export class WMA extends TulindIndicatorWrapper<{
 export class ZLEMA extends TulindIndicatorWrapper<{
   zlema: number[];
 }> {
-  protected readonly tulindIndicatorName = IvyCommonIndicators.ZLEMA;
+  protected readonly tulindIndicatorName = IvyTechnicalIndicators.ZLEMA;
 
   constructor(readonly input: number[], conf: { period: number }) {
     super([input], [conf.period]);

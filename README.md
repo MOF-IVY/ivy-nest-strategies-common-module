@@ -2,32 +2,40 @@
 
 Common package for NestJS strategies. It provides a set of useful tools (modules, services, indicators etc) to easily build strategies in NestJS for Ivy
 
-This module is created to ease the development of NestJS Ivy strategies. It is designed to provide a standard set of the most commonly used tools to build your strategy logic, so you don't have to continuously copy and paste services, models etc that are common to the majority of strategies you are going to implement.
+This module is created to ease the development of NestJS Ivy strategies. It is designed to provide a standard set of the most commonly used tools to build your strategy logic, that are common to the majority of strategies you are going to implement. So you don't have to continuously reinvent the wheel.
 
 # How to install
 
-You can install this package in two different ways.
+You can install this package in two different ways:
 
 - from the GitHub repository
 - from Ivy's npm registry
 
-Although the GitHub installation is the more straightforward, we see more elegant using the Ivy's npm registry, and install the package from there.
+Although the GitHub installation is the more straightforward, we see more elegant using Ivy's npm registry, and install the package from there.
 
-But it's just a matter of personal taste, and you can use whichever method you prefer.
+But is just a matter of taste, and you can use whichever method you prefer.
 
-### Install from Ivy's npm registry:
+### From Ivy's repo:
 
-To install the package from Ivy's official npm registry, you have to:
+Run the install command in your terminal:
 
-- create an ".npmrc" file at the root of your project with this content: `@mof-ivy:registry=https://npm.pkg.github.com`
+```
+npm i git@github.com:MOF-IVY/ivy-nest-strategies-common-module.git
+```
 
-- run this command: `npm i --save @mof-ivy/ivy-nest-strategies-common-module`
+### From Ivy's npm registry:
 
-### Install from Ivy's GitHub repo:
+Create an `.npmrc` file at the root of your project with this content:
 
-To install the package directly from the GitHub repo:
+```
+@mof-ivy:registry=https://npm.pkg.github.com
+```
 
-- run this command: `npm i git@github.com:MOF-IVY/ivy-nest-strategies-common-module.git`
+Run the install command in your terminal:
+
+```
+npm i --save @mof-ivy/ivy-nest-strategies-common-module
+```
 
 # Getting started
 
@@ -73,7 +81,25 @@ TODO: document
 
 # Indicators
 
-TODO: document
+The module also provides a variety of technical indicators ready to use.
+
+All indicators are located and accessible via this import path:
+
+```
+@mof-ivy/ivy-nest-strategies-common-module/dist/indicators
+```
+
+You can find an enum containing all the supported indicators names called `IvyTechnicalIndicators`<br>
+If you find the indicator name you need inside that enum, it means that you can also import the indicator with the same name as the enum key:
+
+```ts
+import {
+    AVGPRICE, // actual indicator class
+    IvyTechnicalIndicators, // all available indicators names enum
+} from '@mof-ivy/ivy-nest-strategies-common-module/dist/indicators'
+
+const indicator = new AVGPRICE(...) // each indicator has its own required configs
+```
 
 # Utils
 

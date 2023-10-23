@@ -8,7 +8,7 @@ const ivy_node_sdk_1 = require("@mof-ivy/ivy-node-sdk");
 const tulind_indicator_wrapper_model_1 = require("./tulind-indicator-wrapper.model");
 class ABS extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ABS;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ABS;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -21,7 +21,7 @@ class ABS extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.ABS = ABS;
 class ACOS extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ACOS;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ACOS;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -34,7 +34,7 @@ class ACOS extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.ACOS = ACOS;
 class AD extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.AD;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.AD;
     constructor(input) {
         super([
             input.map((k) => k[1]),
@@ -53,7 +53,7 @@ exports.AD = AD;
 class ADD extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     inputA;
     inputB;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ADD;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ADD;
     constructor(inputA, inputB) {
         super([inputA, inputB], []);
         this.inputA = inputA;
@@ -68,7 +68,7 @@ exports.ADD = ADD;
 class ADOSC extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ADOSC;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ADOSC;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -88,7 +88,7 @@ exports.ADOSC = ADOSC;
 class ADX extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ADX;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ADX;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -107,7 +107,7 @@ exports.ADX = ADX;
 class ADXR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ADXR;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ADXR;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -125,7 +125,7 @@ class ADXR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.ADXR = ADXR;
 class AO extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.AO;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.AO;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -141,7 +141,7 @@ class AO extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.AO = AO;
 class APO extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.APO;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.APO;
     constructor(input, conf) {
         super([input], [conf.shortPeriod, conf.longPeriod]);
         this.input = input;
@@ -154,7 +154,7 @@ class APO extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.APO = APO;
 class AROON extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.AROON;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.AROON;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -170,7 +170,7 @@ class AROON extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.AROON = AROON;
 class AROONOSC extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.AROONOSC;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.AROONOSC;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -186,7 +186,7 @@ class AROONOSC extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.AROONOSC = AROONOSC;
 class ASIN extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ASIN;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ASIN;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -199,7 +199,7 @@ class ASIN extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.ASIN = ASIN;
 class ATAN extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ATAN;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ATAN;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -212,7 +212,7 @@ class ATAN extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.ATAN = ATAN;
 class ATR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ATR;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ATR;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -229,7 +229,7 @@ class ATR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.ATR = ATR;
 class AVGPRICE extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.AVGPRICE;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.AVGPRICE;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.OPEN]),
@@ -247,7 +247,7 @@ class AVGPRICE extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.AVGPRICE = AVGPRICE;
 class BBANDS extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.BBANDS;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.BBANDS;
     constructor(input, conf) {
         super([input], [conf.period, conf.stddev]);
         this.input = input;
@@ -264,7 +264,7 @@ class BBANDS extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.BBANDS = BBANDS;
 class BOP extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.BOP;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.BOP;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.OPEN]),
@@ -282,7 +282,7 @@ class BOP extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.BOP = BOP;
 class CCI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.CCI;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.CCI;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -299,7 +299,7 @@ class CCI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.CCI = CCI;
 class CEIL extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.CEIL;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.CEIL;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -312,7 +312,7 @@ class CEIL extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.CEIL = CEIL;
 class CMO extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.CMO;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.CMO;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -325,7 +325,7 @@ class CMO extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.CMO = CMO;
 class COS extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.COS;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.COS;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -338,7 +338,7 @@ class COS extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.COS = COS;
 class COSH extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.COSH;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.COSH;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -352,7 +352,7 @@ exports.COSH = COSH;
 class CROSSANY extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     inputA;
     inputB;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.CROSSANY;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.CROSSANY;
     constructor(inputA, inputB) {
         super([inputA, inputB], []);
         this.inputA = inputA;
@@ -367,7 +367,7 @@ exports.CROSSANY = CROSSANY;
 class CROSSOVER extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     inputA;
     inputB;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.CROSSOVER;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.CROSSOVER;
     constructor(inputA, inputB) {
         super([inputA, inputB], []);
         this.inputA = inputA;
@@ -381,7 +381,7 @@ class CROSSOVER extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper 
 exports.CROSSOVER = CROSSOVER;
 class CVI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.CVI;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.CVI;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -397,7 +397,7 @@ class CVI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.CVI = CVI;
 class DECAY extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.DECAY;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.DECAY;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -410,7 +410,7 @@ class DECAY extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.DECAY = DECAY;
 class DEMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.DEMA;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.DEMA;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -423,7 +423,7 @@ class DEMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.DEMA = DEMA;
 class DI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.DI;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.DI;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -441,7 +441,7 @@ exports.DI = DI;
 class DIV extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     inputA;
     inputB;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.DIV;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.DIV;
     constructor(inputA, inputB) {
         super([inputA, inputB], []);
         this.inputA = inputA;
@@ -456,7 +456,7 @@ exports.DIV = DIV;
 class DM extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.DM;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.DM;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -474,7 +474,7 @@ exports.DM = DM;
 class DPO extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.DPO;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.DPO;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -489,7 +489,7 @@ exports.DPO = DPO;
 class DX extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.DX;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.DX;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -508,7 +508,7 @@ exports.DX = DX;
 class EDECAY extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.EDECAY;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.EDECAY;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -523,7 +523,7 @@ exports.EDECAY = EDECAY;
 class EMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.EMA;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.EMA;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -537,7 +537,7 @@ class EMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.EMA = EMA;
 class EMV extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.EMV;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.EMV;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -554,7 +554,7 @@ class EMV extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.EMV = EMV;
 class EXP extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.EXP;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.EXP;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -567,7 +567,7 @@ class EXP extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.EXP = EXP;
 class FISHER extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.FISHER;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.FISHER;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -583,7 +583,7 @@ class FISHER extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.FISHER = FISHER;
 class FLOOR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.FLOOR;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.FLOOR;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -597,7 +597,7 @@ exports.FLOOR = FLOOR;
 class FOSC extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.FOSC;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.FOSC;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -612,7 +612,7 @@ exports.FOSC = FOSC;
 class HMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.HMA;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.HMA;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -627,7 +627,7 @@ exports.HMA = HMA;
 class KAMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.KAMA;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.KAMA;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -641,7 +641,7 @@ class KAMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.KAMA = KAMA;
 class KVO extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.KVO;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.KVO;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -659,7 +659,7 @@ class KVO extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.KVO = KVO;
 class LAG extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.LAG;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.LAG;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -672,7 +672,7 @@ class LAG extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.LAG = LAG;
 class LINREG extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.LINREG;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.LINREG;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -685,7 +685,7 @@ class LINREG extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.LINREG = LINREG;
 class LINREGINTERCEPT extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.LINREGINTERCEPT;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.LINREGINTERCEPT;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -698,7 +698,7 @@ class LINREGINTERCEPT extends tulind_indicator_wrapper_model_1.TulindIndicatorWr
 exports.LINREGINTERCEPT = LINREGINTERCEPT;
 class LINREGSLOPE extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.LINREGSLOPE;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.LINREGSLOPE;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -711,7 +711,7 @@ class LINREGSLOPE extends tulind_indicator_wrapper_model_1.TulindIndicatorWrappe
 exports.LINREGSLOPE = LINREGSLOPE;
 class LN extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.LN;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.LN;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -724,7 +724,7 @@ class LN extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.LN = LN;
 class LOG10 extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.LOG10;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.LOG10;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -737,7 +737,7 @@ class LOG10 extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.LOG10 = LOG10;
 class MACD extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.MACD;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.MACD;
     constructor(input, conf) {
         super([input], [+conf.shortPeriod, +conf.longPeriod, +conf.signalPeriod]);
         this.input = input;
@@ -754,7 +754,7 @@ class MACD extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.MACD = MACD;
 class MARKETFI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.MARKETFI;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.MARKETFI;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -773,7 +773,7 @@ class MARKETFI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.MARKETFI = MARKETFI;
 class MASS extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.MASS;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.MASS;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -791,7 +791,7 @@ class MASS extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.MASS = MASS;
 class MAX extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.MAX;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.MAX;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -806,7 +806,7 @@ class MAX extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.MAX = MAX;
 class MD extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.MD;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.MD;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -821,7 +821,7 @@ class MD extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.MD = MD;
 class MEDPRICE extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.MEDPRICE;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.MEDPRICE;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -839,7 +839,7 @@ class MEDPRICE extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.MEDPRICE = MEDPRICE;
 class MFI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.MFI;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.MFI;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -859,7 +859,7 @@ class MFI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.MFI = MFI;
 class MIN extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.MIN;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.MIN;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -874,7 +874,7 @@ class MIN extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.MIN = MIN;
 class MOM extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.MOM;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.MOM;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -889,7 +889,7 @@ class MOM extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.MOM = MOM;
 class MSW extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.MSW;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.MSW;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -905,7 +905,7 @@ class MSW extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.MSW = MSW;
 class MUL extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     inputA;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.MUL;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.MUL;
     constructor(inputA, inputB) {
         super([inputA, inputB], []);
         this.inputA = inputA;
@@ -920,7 +920,7 @@ class MUL extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.MUL = MUL;
 class NATR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.NATR;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.NATR;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -939,7 +939,7 @@ class NATR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.NATR = NATR;
 class NVI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.NVI;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.NVI;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.CLOSE]),
@@ -957,7 +957,7 @@ class NVI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.NVI = NVI;
 class OBV extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.OBV;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.OBV;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.CLOSE]),
@@ -975,7 +975,7 @@ class OBV extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.OBV = OBV;
 class PPO extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.PPO;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.PPO;
     constructor(input, conf) {
         super([input], [conf.shortPeriod, conf.longPeriod]);
         this.input = input;
@@ -990,7 +990,7 @@ class PPO extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.PPO = PPO;
 class PSAR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.PSAR;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.PSAR;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -1008,7 +1008,7 @@ class PSAR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.PSAR = PSAR;
 class PVI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.PVI;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.PVI;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.CLOSE]),
@@ -1026,7 +1026,7 @@ class PVI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.PVI = PVI;
 class QSTICK extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.QSTICK;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.QSTICK;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.OPEN]),
@@ -1044,7 +1044,7 @@ class QSTICK extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.QSTICK = QSTICK;
 class ROC extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ROC;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ROC;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1059,7 +1059,7 @@ class ROC extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.ROC = ROC;
 class ROCR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ROCR;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ROCR;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1074,7 +1074,7 @@ class ROCR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.ROCR = ROCR;
 class ROUND extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ROUND;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ROUND;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -1089,7 +1089,7 @@ class ROUND extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.ROUND = ROUND;
 class RSI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.RSI;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.RSI;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1104,7 +1104,7 @@ class RSI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.RSI = RSI;
 class SIN extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.SIN;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.SIN;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -1119,7 +1119,7 @@ class SIN extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.SIN = SIN;
 class SINH extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.SINH;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.SINH;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -1134,7 +1134,7 @@ class SINH extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.SINH = SINH;
 class SMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.SMA;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.SMA;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1149,7 +1149,7 @@ class SMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.SMA = SMA;
 class SQRT extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.SQRT;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.SQRT;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -1164,7 +1164,7 @@ class SQRT extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.SQRT = SQRT;
 class STDDEV extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.STDDEV;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.STDDEV;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1179,7 +1179,7 @@ class STDDEV extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.STDDEV = STDDEV;
 class STDERR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.STDERR;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.STDERR;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1194,7 +1194,7 @@ class STDERR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.STDERR = STDERR;
 class STOCH extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.STOCH;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.STOCH;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -1214,7 +1214,7 @@ class STOCH extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.STOCH = STOCH;
 class STOCHRSI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.STOCHRSI;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.STOCHRSI;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1229,7 +1229,7 @@ class STOCHRSI extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.STOCHRSI = STOCHRSI;
 class SUB extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     inputA;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.SUB;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.SUB;
     constructor(inputA, inputB) {
         super([inputA, inputB], []);
         this.inputA = inputA;
@@ -1246,7 +1246,7 @@ class SUM extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     inputA;
     inputB;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.SUM;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.SUM;
     constructor(inputA, inputB, conf) {
         super([inputA, inputB], [conf.period]);
         this.inputA = inputA;
@@ -1263,7 +1263,7 @@ class SUM extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.SUM = SUM;
 class TAN extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.TAN;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.TAN;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -1278,7 +1278,7 @@ class TAN extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.TAN = TAN;
 class TANH extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.TANH;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.TANH;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -1293,7 +1293,7 @@ class TANH extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.TANH = TANH;
 class TEMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.TEMA;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.TEMA;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1308,7 +1308,7 @@ class TEMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.TEMA = TEMA;
 class TODEG extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.TODEG;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.TODEG;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -1323,7 +1323,7 @@ class TODEG extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.TODEG = TODEG;
 class TORAD extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.TORAD;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.TORAD;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -1338,7 +1338,7 @@ class TORAD extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.TORAD = TORAD;
 class TR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.TR;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.TR;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -1357,7 +1357,7 @@ class TR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.TR = TR;
 class TRIMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.TRIMA;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.TRIMA;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1372,7 +1372,7 @@ class TRIMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.TRIMA = TRIMA;
 class TRIX extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.TRIX;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.TRIX;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1387,7 +1387,7 @@ class TRIX extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.TRIX = TRIX;
 class TRUNC extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.TRUNC;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.TRUNC;
     constructor(input) {
         super([input], []);
         this.input = input;
@@ -1402,7 +1402,7 @@ class TRUNC extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.TRUNC = TRUNC;
 class TSF extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.TSF;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.TSF;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1417,7 +1417,7 @@ class TSF extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.TSF = TSF;
 class TYPPRICE extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.TYPPRICE;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.TYPPRICE;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -1436,7 +1436,7 @@ class TYPPRICE extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.TYPPRICE = TYPPRICE;
 class ULTOSC extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ULTOSC;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ULTOSC;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -1455,7 +1455,7 @@ class ULTOSC extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.ULTOSC = ULTOSC;
 class VAR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.VAR;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.VAR;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1470,7 +1470,7 @@ class VAR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.VAR = VAR;
 class VHF extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.VHF;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.VHF;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1485,7 +1485,7 @@ class VHF extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.VHF = VHF;
 class VIDYA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.VIDYA;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.VIDYA;
     constructor(input, conf) {
         super([input], [conf.shortPeriod, conf.longPeriod, conf.alpha]);
         this.input = input;
@@ -1500,7 +1500,7 @@ class VIDYA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.VIDYA = VIDYA;
 class VOLATILITY extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.VOLATILITY;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.VOLATILITY;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1516,7 +1516,7 @@ exports.VOLATILITY = VOLATILITY;
 class VOSC extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
     conf;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.VOSC;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.VOSC;
     constructor(input, conf) {
         super([input], [conf.shortPeriod, conf.longPeriod]);
         this.input = input;
@@ -1532,7 +1532,7 @@ class VOSC extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.VOSC = VOSC;
 class VWMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.VWMA;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.VWMA;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.CLOSE]),
@@ -1550,7 +1550,7 @@ class VWMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.VWMA = VWMA;
 class WAD extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.WAD;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.WAD;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -1569,7 +1569,7 @@ class WAD extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.WAD = WAD;
 class WCPRICE extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.WCPRICE;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.WCPRICE;
     constructor(input) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -1588,7 +1588,7 @@ class WCPRICE extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.WCPRICE = WCPRICE;
 class WILDERS extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.WILDERS;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.WILDERS;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1603,7 +1603,7 @@ class WILDERS extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.WILDERS = WILDERS;
 class WILLR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.WILLR;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.WILLR;
     constructor(input, conf) {
         super([
             input.map((k) => k[ivy_node_sdk_1.OHLCVPositions.HIGH]),
@@ -1622,7 +1622,7 @@ class WILLR extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.WILLR = WILLR;
 class WMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.WMA;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.WMA;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;
@@ -1637,7 +1637,7 @@ class WMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
 exports.WMA = WMA;
 class ZLEMA extends tulind_indicator_wrapper_model_1.TulindIndicatorWrapper {
     input;
-    tulindIndicatorName = indicators_enum_1.IvyCommonIndicators.ZLEMA;
+    tulindIndicatorName = indicators_enum_1.IvyTechnicalIndicators.ZLEMA;
     constructor(input, conf) {
         super([input], [conf.period]);
         this.input = input;

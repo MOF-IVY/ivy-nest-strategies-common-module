@@ -1,4 +1,4 @@
-export declare enum IvyCommonIndicators {
+export declare enum IvyTechnicalIndicators {
     /**
      * Vector Absolute Value
      */
