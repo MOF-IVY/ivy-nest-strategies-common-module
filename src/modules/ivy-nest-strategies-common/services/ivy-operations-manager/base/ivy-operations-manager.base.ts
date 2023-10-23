@@ -82,7 +82,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
   async closeOperation(
     sym: string,
     orderType: "Market" | "Limit",
-    reason: string
+    reason?: string
   ) {
     let intent: string;
     if (!this.hasActiveOperation(sym)) {
