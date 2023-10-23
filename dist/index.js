@@ -14,6 +14,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./shared/indicators"), exports);
 __exportStar(require("./shared/utils/klines.utils"), exports);
 __exportStar(require("./shared/utils/time-frames.utils"), exports);
 __exportStar(require("./shared/constants/log-keys.const"), exports);

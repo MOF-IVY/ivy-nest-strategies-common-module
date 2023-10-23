@@ -1,3 +1,5 @@
+export * from "./shared/indicators";
+
 export * from "./shared/utils/klines.utils";
 export * from "./shared/utils/time-frames.utils";
 
