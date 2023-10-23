@@ -30,8 +30,6 @@ export abstract class IvyScriptConfigServiceBase<
 
   constructor(
     protected readonly sdk: IvySDKService,
-
-    @Inject("IVY_SCRIPT_INITIAL_CONFIG")
     protected readonly initialConfig: ScriptConfigType
   ) {
     this.logger = this.sdk.instance.log.bind(this.sdk.instance);

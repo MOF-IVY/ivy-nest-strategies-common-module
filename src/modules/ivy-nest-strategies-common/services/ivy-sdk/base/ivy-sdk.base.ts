@@ -8,10 +8,7 @@ export abstract class IvySDKServiceBase<
 > {
   protected readonly sdkInstance: IvySDK<ScriptConfigType>;
 
-  constructor(
-    @Inject("IVY_SCRIPT_INITIAL_CONFIG")
-    protected SDKConfig?: ISDKConfigOpts
-  ) {
+  constructor(protected SDKConfig?: ISDKConfigOpts) {
     this.sdkInstance = new IvySDK(this.SDKConfig ?? {});
   }
 
