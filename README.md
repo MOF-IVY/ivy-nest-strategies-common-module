@@ -1,6 +1,6 @@
 # Ivy Nest strategies common module
 
-Common package for NestJS strategies. It provides a set of useful tools (modules, services, models etc) to easily build strategies in NestJS for Ivy
+Common package for NestJS strategies. It provides a set of useful tools (modules, services, indicators etc) to easily build strategies in NestJS for Ivy
 
 This module is created to ease the development of NestJS Ivy strategies. It is designed to provide a standard set of the most commonly used tools to build your strategy logic, so you don't have to continuously copy and paste services, models etc that are common to the majority of strategies you are going to implement.
 
@@ -68,6 +68,10 @@ TODO: document
 TODO: document
 
 ## OperationsManager service:
+
+TODO: document
+
+# Indicators
 
 TODO: document
 
