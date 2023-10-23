@@ -6,6 +6,7 @@ export * from "./modules/ivy-nest-strategies-common/services/ivy-sdk/ivy-sdk.ser
 export * from "./modules/ivy-nest-strategies-common/services/ivy-sdk/base/ivy-sdk.base";
 export * from "./modules/ivy-nest-strategies-common/services/ivy-script-config/ivy-script-config.service";
 export * from "./modules/ivy-nest-strategies-common/services/ivy-script-config/base/ivy-script-config.base";
+export * from "./modules/ivy-nest-strategies-common/services/ivy-script-config/models/initial-script-config.model";
 export * from "./modules/ivy-nest-strategies-common/services/ivy-strongest-presence/ivy-strongest-presence.service";
 export * from "./modules/ivy-nest-strategies-common/services/ivy-strongest-presence/base/ivy-strongest-presence.base";
 export * from "./modules/ivy-nest-strategies-common/services/ivy-operations-manager/models/active-operation.model";

@@ -22,6 +22,7 @@ __exportStar(require("./modules/ivy-nest-strategies-common/services/ivy-sdk/ivy-
 __exportStar(require("./modules/ivy-nest-strategies-common/services/ivy-sdk/base/ivy-sdk.base"), exports);
 __exportStar(require("./modules/ivy-nest-strategies-common/services/ivy-script-config/ivy-script-config.service"), exports);
 __exportStar(require("./modules/ivy-nest-strategies-common/services/ivy-script-config/base/ivy-script-config.base"), exports);
+__exportStar(require("./modules/ivy-nest-strategies-common/services/ivy-script-config/models/initial-script-config.model"), exports);
 __exportStar(require("./modules/ivy-nest-strategies-common/services/ivy-strongest-presence/ivy-strongest-presence.service"), exports);
 __exportStar(require("./modules/ivy-nest-strategies-common/services/ivy-strongest-presence/base/ivy-strongest-presence.base"), exports);
 __exportStar(require("./modules/ivy-nest-strategies-common/services/ivy-operations-manager/models/active-operation.model"), exports);

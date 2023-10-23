@@ -35,25 +35,85 @@ class IvyStrongestPresenceServiceBase {
         const { exchangeMarket, result } = event;
         if (exchangeMarket !== this.config.snap.exchangeMarket)
             return;
-        if (!this.allRequiredTFsArePresent(result.map((i) => i.tf), this.config.snap.pumpRankingTfs))
+        if (!this.allRequiredTFsArePresent(result.map((i) => i.tf), this.config.snap.pumpTFs))
             return;
-        const rankings = this.getRequiredTFsRankings(this.config.snap.pumpRankingTfs, event, this.config.snap.pumpLookBackWindow);
-        const distinctSymsInRankings = [
-            ...new Set(rankings.flatMap((i) => i.items.map((_) => _.k.split("~")[0]))),
-        ];
+        if (this.config.snap.pumpStrongestPresenceDisabled)
+            this.checkSimpleLongCandidates(event);
+        else
+            this.checkStrongestPresenceLongCandidates(event);
+    }
+    async onDumpEvent(event) {
+        const { exchangeMarket, result } = event;
+        if (exchangeMarket !== this.config.snap.exchangeMarket)
+            return;
+        if (!this.allRequiredTFsArePresent(result.map((i) => i.tf), this.config.snap.dumpTFs))
+            return;
+        if (this.config.snap.dumpStrongestPresenceDisabled)
+            this.checkSimpleShortCandidates(event);
+        else
+            this.checkStrongestPresenceShortCandidates(event);
+    }
+    checkStrongestPresenceLongCandidates(event) {
+        const rankings = this.getRequiredTFsRankings(this.config.snap.pumpTFs, event, this.config.snap.pumpingSymbolsPerTF);
+        const distinctSymsInRankings = this.TFsRankingsToDistinctSymbols(rankings);
+        const newCandidates = this.getStrongestPresenceNewCandidates(distinctSymsInRankings, rankings);
+        if (this.candidatesListHasChanged(this.longCandidates$.getValue(), newCandidates)) {
+            this.logger(newCandidates.toString(), log_keys_const_1.IvyNestStrategiesCommonLogKeys.longCandidates, true);
+        }
+        this.longCandidates$.next(newCandidates);
+    }
+    checkStrongestPresenceShortCandidates(event) {
+        const rankings = this.getRequiredTFsRankings(this.config.snap.dumpTFs, event, this.config.snap.dumpingSymbolsPerTF);
+        const distinctSymsInRankings = this.TFsRankingsToDistinctSymbols(rankings);
+        const newCandidates = this.getStrongestPresenceNewCandidates(distinctSymsInRankings, rankings);
+        if (this.candidatesListHasChanged(this.shortCandidates$.getValue(), newCandidates)) {
+            this.logger(newCandidates.toString(), log_keys_const_1.IvyNestStrategiesCommonLogKeys.shortCandidates, true);
+        }
+        this.shortCandidates$.next(newCandidates);
+    }
+    getStrongestPresenceNewCandidates(distinctSymbols, rankings) {
         let newCandidates = [];
-        distinctSymsInRankings.forEach((sym) => {
+        distinctSymbols.forEach((sym) => {
             if (rankings.every((tf) => !!tf.items.find((i) => i.k.startsWith(sym)))) {
                 newCandidates.push(sym);
             }
         });
         newCandidates = newCandidates.sort();
-        const stringCandidates = newCandidates.toString();
-        if (!!stringCandidates &&
-            this.longCandidates$.getValue().toString() !== stringCandidates) {
-            this.logger(newCandidates.toString(), log_keys_const_1.IvyNestStrategiesCommonLogKeys.longCandidates, true);
+        return newCandidates;
+    }
+    async checkSimpleLongCandidates(event) {
+        const { exchangeMarket, result } = event;
+        if (exchangeMarket !== this.config.snap.exchangeMarket)
+            return;
+        if (!this.allRequiredTFsArePresent(result.map((i) => i.tf), this.config.snap.pumpTFs))
+            return;
+        const oldCandidates = this.longCandidates$.getValue();
+        const newCandidates = this.TFsRankingsToDistinctSymbols(this.getRequiredTFsRankings(this.config.snap.pumpTFs, event, this.config.snap.pumpingSymbolsPerTF));
+        if (this.candidatesListHasChanged(oldCandidates, newCandidates)) {
+            this.logger(newCandidates, log_keys_const_1.IvyNestStrategiesCommonLogKeys.longCandidates, true);
         }
         this.longCandidates$.next(newCandidates);
+    }
+    async checkSimpleShortCandidates(event) {
+        const { exchangeMarket, result } = event;
+        if (exchangeMarket !== this.config.snap.exchangeMarket)
+            return;
+        if (!this.allRequiredTFsArePresent(result.map((i) => i.tf), this.config.snap.dumpTFs))
+            return;
+        const oldCandidates = this.shortCandidates$.getValue();
+        const newCandidates = this.TFsRankingsToDistinctSymbols(this.getRequiredTFsRankings(this.config.snap.dumpTFs, event, this.config.snap.dumpingSymbolsPerTF));
+        if (this.candidatesListHasChanged(oldCandidates, newCandidates)) {
+            this.logger(newCandidates, log_keys_const_1.IvyNestStrategiesCommonLogKeys.shortCandidates, true);
+        }
+        this.shortCandidates$.next(newCandidates);
+    }
+    TFsRankingsToDistinctSymbols(newCandidatesRankings) {
+        return [
+            ...new Set(newCandidatesRankings.flatMap((i) => i.items.map((_) => _.k.split("~")[0]))),
+        ];
+    }
+    candidatesListHasChanged(oldCandidates, newCandidates) {
+        return oldCandidates.toString() !== (newCandidates ?? []).toString();
     }
     getRequiredTFsRankings(requiredTFs, event, lookBackWindow) {
         return event.result
@@ -68,59 +128,41 @@ class IvyStrongestPresenceServiceBase {
             return false;
         return true;
     }
-    async onDumpEvent(event) {
-        const { exchangeMarket, result } = event;
-        if (exchangeMarket !== this.config.snap.exchangeMarket)
-            return;
-        if (!this.allRequiredTFsArePresent(result.map((i) => i.tf), this.config.snap.dumpRankingTfs))
-            return;
-        const rankings = this.getRequiredTFsRankings(this.config.snap.dumpRankingTfs, event, this.config.snap.dumpLookBackWindow);
-        const distinctSymsInRankings = [
-            ...new Set(rankings.flatMap((i) => i.items.map((_) => _.k.split("~")[0]))),
-        ];
-        let newCandidates = [];
-        distinctSymsInRankings.forEach((sym) => {
-            if (rankings.every((tf) => !!tf.items.find((i) => i.k.startsWith(sym)))) {
-                newCandidates.push(sym);
-            }
-        });
-        newCandidates = newCandidates.sort();
-        const stringCandidates = newCandidates.toString();
-        if (!!stringCandidates &&
-            this.shortCandidates$.getValue().toString() !== stringCandidates) {
-            this.logger(stringCandidates, log_keys_const_1.IvyNestStrategiesCommonLogKeys.shortCandidates, true);
-        }
-        this.shortCandidates$.next(newCandidates);
-    }
     setupStreamsOrBlock() {
         (0, rxjs_1.combineLatest)([this.sdk.subscribeReady(), this.config.subscribeReady()])
-            .pipe((0, rxjs_1.filter)(([sdk, config]) => !!sdk && !!config), (0, rxjs_1.take)(1), (0, rxjs_1.switchMap)(() => {
-            return this.sdk.instance.enablePumpStream({
+            .pipe((0, rxjs_1.filter)(([sdk, config]) => !!sdk && !!config), (0, rxjs_1.take)(1), (0, rxjs_1.switchMap)(() => this.config.snap.pumpTFs === null
+            ? (0, rxjs_1.of)()
+            : this.sdk.instance.enablePumpStream({
                 xm: this.config.snap.exchangeMarket,
-                tfs: this.config.snap.pumpRankingTfs,
-            });
-        }), (0, rxjs_1.filter)((error) => {
+                tfs: this.config.snap.dumpTFs,
+            })), (0, rxjs_1.filter)((error) => {
             if (!!error) {
                 this.logger("Cannot enable PUMP stream", log_keys_const_1.IvyNestStrategiesCommonLogKeys.scriptFatal, true);
                 return false;
             }
             return true;
-        }), (0, rxjs_1.switchMap)(() => this.sdk.instance.enableDumpStream({
-            xm: this.config.snap.exchangeMarket,
-            tfs: this.config.snap.dumpRankingTfs,
-        })), (0, rxjs_1.filter)((error) => {
+        }), (0, rxjs_1.switchMap)(() => this.config.snap.dumpTFs === null
+            ? (0, rxjs_1.of)()
+            : this.sdk.instance.enableDumpStream({
+                xm: this.config.snap.exchangeMarket,
+                tfs: this.config.snap.dumpTFs,
+            })), (0, rxjs_1.filter)((error) => {
             if (!!error) {
                 this.logger("Cannot enable DUMP stream", log_keys_const_1.IvyNestStrategiesCommonLogKeys.scriptFatal, true);
                 return false;
             }
             return true;
-        }), (0, rxjs_1.tap)(() => this.sdk.instance
-            .subscribePumpStream()
-            .pipe((0, rxjs_1.tap)((event) => this.onPumpEvent(event)))
-            .subscribe()), (0, rxjs_1.tap)(() => this.sdk.instance
-            .subscribeDumpStream()
-            .pipe((0, rxjs_1.tap)((event) => this.onDumpEvent(event)))
-            .subscribe()), (0, rxjs_1.tap)(() => this.ready$.next(true)))
+        }), (0, rxjs_1.tap)(() => this.config.snap.pumpTFs === null
+            ? null
+            : this.sdk.instance
+                .subscribePumpStream()
+                .pipe((0, rxjs_1.tap)((event) => this.onPumpEvent(event)))
+                .subscribe()), (0, rxjs_1.tap)(() => this.config.snap.dumpTFs === null
+            ? null
+            : this.sdk.instance
+                .subscribeDumpStream()
+                .pipe((0, rxjs_1.tap)((event) => this.onDumpEvent(event)))
+                .subscribe()), (0, rxjs_1.tap)(() => this.ready$.next(true)))
             .subscribe();
     }
 }

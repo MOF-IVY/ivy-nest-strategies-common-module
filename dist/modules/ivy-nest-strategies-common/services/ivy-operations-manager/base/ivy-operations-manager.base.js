@@ -71,7 +71,7 @@ class IvyOperationsManagerBase {
                 orderType,
                 symbol: sym,
                 operationType: operation.type,
-                isMockOrder: this.config.snap.mockOrders,
+                isMockOrder: operation.isPaperMode,
                 exchangeMarket: this.config.snap.exchangeMarket,
             });
             if (operationId === null) {
@@ -106,6 +106,7 @@ class IvyOperationsManagerBase {
                 type: opType,
                 extras: extraProps,
                 pendingOpen: true,
+                isPaperMode: this.config.snap.isPaperMode,
                 stats: { absoluteProfit: 0, percentageProfit: 0 },
             };
             this.operations[sym] = operation;
@@ -115,8 +116,8 @@ class IvyOperationsManagerBase {
                 orderType,
                 symbol: sym,
                 operationType: opType,
+                isMockOrder: operation.isPaperMode,
                 leverage: this.config.snap.leverage,
-                isMockOrder: this.config.snap.mockOrders,
                 minBuyBudget: this.config.snap.minBuyBudget,
                 exchangeMarket: this.config.snap.exchangeMarket,
             });

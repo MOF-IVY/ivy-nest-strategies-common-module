@@ -101,7 +101,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
         orderType,
         symbol: sym,
         operationType: operation.type,
-        isMockOrder: this.config.snap.mockOrders,
+        isMockOrder: operation.isPaperMode,
         exchangeMarket: this.config.snap.exchangeMarket,
       });
 
@@ -153,6 +153,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
         type: opType,
         extras: extraProps,
         pendingOpen: true,
+        isPaperMode: this.config.snap.isPaperMode,
         stats: { absoluteProfit: 0, percentageProfit: 0 },
       };
       this.operations[sym] = operation;
@@ -163,8 +164,8 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
         orderType,
         symbol: sym,
         operationType: opType,
+        isMockOrder: operation.isPaperMode,
         leverage: this.config.snap.leverage,
-        isMockOrder: this.config.snap.mockOrders,
         minBuyBudget: this.config.snap.minBuyBudget,
         exchangeMarket: this.config.snap.exchangeMarket,
       });

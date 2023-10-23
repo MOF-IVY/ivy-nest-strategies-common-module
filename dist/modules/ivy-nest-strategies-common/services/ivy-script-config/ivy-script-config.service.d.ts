@@ -1,3 +1,4 @@
 import { IvyScriptConfigServiceBase } from "./base/ivy-script-config.base";
-export declare class IvyScriptConfigService<ScriptConfigType = Record<string, any>> extends IvyScriptConfigServiceBase<ScriptConfigType> {
+import { IIvyScriptInitialConfig } from "./models/initial-script-config.model";
+export declare class IvyScriptConfigService<ScriptConfigType = IIvyScriptInitialConfig> extends IvyScriptConfigServiceBase<ScriptConfigType> {
 }

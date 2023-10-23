@@ -3,6 +3,7 @@ import { ExchangeOperationType, IOperationStats } from "@mof-ivy/ivy-node-sdk";
 export interface IActiveOperation<AdditionalProps = null> {
   id: string;
   pendingOpen?: boolean;
+  isPaperMode?: boolean;
   pendingClose?: boolean;
   stats: IOperationStats;
   type: ExchangeOperationType;

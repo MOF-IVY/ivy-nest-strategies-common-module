@@ -1,7 +1,8 @@
 import { BehaviorSubject } from "rxjs";
 import { IStandardWsError } from "@mof-ivy/ivy-node-sdk/dist/core/services/base/ws.service";
 import { IvySDKService } from "../../ivy-sdk/ivy-sdk.service";
-export declare abstract class IvyScriptConfigServiceBase<ScriptConfigType = Record<string, any>> {
+import { IIvyScriptInitialConfig } from "../models/initial-script-config.model";
+export declare abstract class IvyScriptConfigServiceBase<ScriptConfigType = IIvyScriptInitialConfig> {
     protected readonly sdk: IvySDKService;
     protected readonly initialConfig: ScriptConfigType;
     protected readonly logger: (message: object | string, logKey: string, persist?: boolean) => Promise<boolean | IStandardWsError>;

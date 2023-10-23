@@ -13,10 +13,11 @@ import { Inject } from "@nestjs/common";
 import { IStandardWsError } from "@mof-ivy/ivy-node-sdk/dist/core/services/base/ws.service";
 
 import { IvySDKService } from "../../ivy-sdk/ivy-sdk.service";
+import { IIvyScriptInitialConfig } from "../models/initial-script-config.model";
 import { IvyNestStrategiesCommonLogKeys } from "../../../../../shared/constants/log-keys.const";
 
 export abstract class IvyScriptConfigServiceBase<
-  ScriptConfigType = Record<string, any>
+  ScriptConfigType = IIvyScriptInitialConfig
 > {
   protected readonly logger: (
     message: object | string,
