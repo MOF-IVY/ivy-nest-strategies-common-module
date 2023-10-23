@@ -10,13 +10,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.IvyNestStrategiesCommonModule = void 0;
 const common_1 = require("@nestjs/common");
 const ivy_script_config_service_1 = require("./services/ivy-script-config/ivy-script-config.service");
+const ivy_operations_manager_service_1 = require("./services/ivy-operations-manager/ivy-operations-manager.service");
+const ivy_sdk_service_1 = require("./services/ivy-sdk/ivy-sdk.service");
+const ivy_strongest_presence_service_1 = require("./services/ivy-strongest-presence/ivy-strongest-presence.service");
 let IvyNestStrategiesCommonModule = IvyNestStrategiesCommonModule_1 = class IvyNestStrategiesCommonModule {
     static register(options) {
         return {
             module: IvyNestStrategiesCommonModule_1,
-            exports: [ivy_script_config_service_1.IvyScriptConfigService],
-            providers: [
+            exports: [
+                ivy_sdk_service_1.IvySDKService,
                 ivy_script_config_service_1.IvyScriptConfigService,
+                ivy_operations_manager_service_1.IvyOperationsManagerService,
+                ivy_strongest_presence_service_1.IvyStrongestPresenceService,
+            ],
+            providers: [
+                ivy_sdk_service_1.IvySDKService,
+                ivy_script_config_service_1.IvyScriptConfigService,
+                ivy_operations_manager_service_1.IvyOperationsManagerService,
+                ivy_strongest_presence_service_1.IvyStrongestPresenceService,
                 {
                     provide: "IVY_SCRIPT_INITIAL_CONFIG",
                     useValue: options.scriptInitialScriptConfig,
