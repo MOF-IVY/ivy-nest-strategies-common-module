@@ -1,4 +1,4 @@
-import * as heikinashi from "heikinashi";
+import heikinashi from "heikinashi";
 import { OHLCV, OHLCVPositions } from "@mof-ivy/ivy-node-sdk";
 
 export class IvyKlinesUtils {
