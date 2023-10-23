@@ -48,7 +48,7 @@ export interface IIvyScriptInitialConfig {
      *
      * If NULL it disables the pump monitor feature entirely
      */
-    pumpTFs: string[];
+    pumpTFs: string[] | null;
     /**
      * How many pumping symbols you want on each time frame.
      * No more than 20 items are supported at the moment.
@@ -71,7 +71,7 @@ export interface IIvyScriptInitialConfig {
      *
      * If NULL it disables the dump monitor feature entirely
      */
-    dumpTFs: string[];
+    dumpTFs: string[] | null;
     /**
      * How many dumping symbols you want on each time.
      * No more than 20 items are supported at the moment.
