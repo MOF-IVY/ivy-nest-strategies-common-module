@@ -8,7 +8,7 @@ export class IvySDKService<
   ScriptConfigType = Record<string, any>
 > extends IvySDKServiceBase<ScriptConfigType> {
   constructor(
-    @Inject("IVY_SCRIPT_INITIAL_CONFIG")
+    @Inject("IVY_SDK_CONFIG")
     protected SDKConfig?: ISDKConfigOpts
   ) {
     super(SDKConfig);

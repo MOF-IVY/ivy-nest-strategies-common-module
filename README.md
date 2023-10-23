@@ -43,12 +43,7 @@ TODO: document how to register the module and a basic usage example
 
 # Services
 
-The module exposes several services that you can use.
-
-Each service provided has its own base class, called as the service name with the `Base` postfix. For example: `IvyScriptConfigService` base would be `IvyScriptConfigServiceBase`.
-
-You can use these interfaces to implement your own version of a service, if that service does not fullfil your needs. <br>
-Or you can extend each service and only override the methods you want to behave differently.
+The module exposes several services that you can use. These services are designed to ease your development process, and help you keep a standard structure and workflow across all your strategies. By providing you with a standard set of tools and procedures for performing repetitive tasks. Live getting configurations, managing orders, interacting with the pump/dump service and more.
 
 ### Available services list
 

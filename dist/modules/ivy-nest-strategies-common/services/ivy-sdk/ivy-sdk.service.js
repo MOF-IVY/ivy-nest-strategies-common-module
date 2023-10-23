@@ -24,7 +24,7 @@ let IvySDKService = class IvySDKService extends ivy_sdk_base_1.IvySDKServiceBase
 };
 IvySDKService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, common_1.Inject)("IVY_SCRIPT_INITIAL_CONFIG")),
+    __param(0, (0, common_1.Inject)("IVY_SDK_CONFIG")),
     __metadata("design:paramtypes", [Object])
 ], IvySDKService);
 exports.IvySDKService = IvySDKService;
