@@ -1,4 +1,3 @@
-export * from "./shared/indicators";
 export * from "./shared/utils/klines.utils";
 export * from "./shared/utils/time-frames.utils";
 export * from "./shared/constants/log-keys.const";
