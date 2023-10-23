@@ -1,0 +1,32 @@
+{
+  "name": "@mof-ivy/ivy-nest-strategies-common-module",
+  "version": "0.0.0",
+  "description": "Common package for NestJS strategies. It provides a set of useful tools (modules, services, models etc) to easily build strategies in NestJS for Ivy",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "pub": "echo \"Commit message: \" && read message && npm run build && git add . && git commit -m \"$message\" && npm version patch && npm publish && git push origin main",
+    "update:sdk": "npm i https://github.com/MOF-IVY/ivy-node-sdk.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MOF-IVY/ivy-nest-strategies-common-module.git"
+  },
+  "author": "Caius Citiriga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MOF-IVY/ivy-nest-strategies-common-module/issues"
+  },
+  "homepage": "https://github.com/MOF-IVY/ivy-nest-strategies-common-module#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@mof-ivy/ivy-node-sdk": "github:MOF-IVY/ivy-node-sdk",
+    "@nestjs/common": "^10.2.7",
+    "@types/node": "^20.8.7",
+    "heikinashi": "^1.0.6",
+    "rxjs": "^7.8.1"
+  }
+}
