@@ -39,7 +39,30 @@ npm i --save @mof-ivy/ivy-nest-strategies-common-module
 
 # Getting started
 
-TODO: document how to register the module and a basic usage example
+Before using the services inside the library you must register the module in the module that will use the services exported by the library.
+
+The register method takes two parameters:
+
+- a required `scriptInitialScriptConfig`, which is the initial values of your script configuration, if you don't have a config or you don't need one, just pass an empty object.
+
+- an optional `SDKConfig`, which is the optional SDK configuration. For more information about Ivy's SDK and API documentation please refer to [Ivy's node SDK repository](https://github.com/MOF-IVY/ivy-node-sdk)
+
+```ts
+// app.module.ts
+
+@Module({
+  imports: [
+    IvyNestStrategiesCommonModule.register({
+      scriptInitialScriptConfig: InitialScriptConfig,
+      SDKConfig: {
+        ... // see Ivy's node SDK documentation for information about these configs
+      },
+    }),
+  ],
+})
+export class AppModule {}
+
+```
 
 # Services
 
