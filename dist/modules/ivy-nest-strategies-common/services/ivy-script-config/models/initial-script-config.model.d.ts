@@ -89,10 +89,4 @@ export interface IIvyScriptInitialConfig {
      * @defaults to false
      */
     dumpStrongestPresenceDisabled: boolean;
-    /**
-     * The take profit percentage, it must be a positive number
-     *
-     * If NULL is disabled
-     */
-    takeProfitPercentage: number;
 }
