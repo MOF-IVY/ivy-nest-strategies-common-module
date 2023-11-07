@@ -71,7 +71,6 @@ class IvyOperationsManagerBase {
                 orderType,
                 symbol: sym,
                 operationType: operation.type,
-                isMockOrder: operation.isPaperMode,
                 exchangeMarket: this.config.snap.exchangeMarket,
             });
             if (operationId === null) {
@@ -161,17 +160,17 @@ class IvyOperationsManagerBase {
                 delete this.operations[sym];
         });
     }
-    onCloseOperationError(op) {
+    onCloseOperationError(id) {
         Object.keys(this.operations).forEach((sym) => {
-            if (this.operations[sym].id === op.operationId)
+            if (this.operations[sym].id === id)
                 this.operations[sym].pendingClose = false;
-            this.logger(`[${sym}](${op.type}) Trader couldn't close operation. Will retry soon`, log_keys_const_1.IvyNestStrategiesCommonLogKeys.scriptErrors, true);
+            this.logger(`[${sym}](${this.operations[sym].type}) Trader couldn't close operation. Will retry soon`, log_keys_const_1.IvyNestStrategiesCommonLogKeys.scriptErrors, true);
         });
     }
-    onOpenOperationError(op) {
+    onOpenOperationError(id) {
         Object.keys(this.operations).forEach((sym) => {
-            if (this.operations[sym].id === op.operationId) {
-                this.logger(`[${sym}](${op.type}) Trader couldn't open operation`, log_keys_const_1.IvyNestStrategiesCommonLogKeys.scriptErrors, true);
+            if (this.operations[sym].id === id) {
+                this.logger(`[${sym}](${this.operations[sym].type}) Trader couldn't open operation`, log_keys_const_1.IvyNestStrategiesCommonLogKeys.scriptErrors, true);
                 delete this.operations[sym];
             }
         });

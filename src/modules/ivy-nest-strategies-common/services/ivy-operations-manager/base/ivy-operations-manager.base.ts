@@ -101,7 +101,6 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
         orderType,
         symbol: sym,
         operationType: operation.type,
-        isMockOrder: operation.isPaperMode,
         exchangeMarket: this.config.snap.exchangeMarket,
       });
 
@@ -222,23 +221,23 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
     });
   }
 
-  protected onCloseOperationError(op: ITraderOperation): void {
+  protected onCloseOperationError(id: string): void {
     Object.keys(this.operations).forEach((sym) => {
-      if (this.operations[sym].id === op.operationId)
+      if (this.operations[sym].id === id)
         this.operations[sym].pendingClose = false;
       this.logger(
-        `[${sym}](${op.type}) Trader couldn't close operation. Will retry soon`,
+        `[${sym}](${this.operations[sym].type}) Trader couldn't close operation. Will retry soon`,
         IvyNestStrategiesCommonLogKeys.scriptErrors,
         true
       );
     });
   }
 
-  protected onOpenOperationError(op: ITraderOperation): void {
+  protected onOpenOperationError(id: string): void {
     Object.keys(this.operations).forEach((sym) => {
-      if (this.operations[sym].id === op.operationId) {
+      if (this.operations[sym].id === id) {
         this.logger(
-          `[${sym}](${op.type}) Trader couldn't open operation`,
+          `[${sym}](${this.operations[sym].type}) Trader couldn't open operation`,
           IvyNestStrategiesCommonLogKeys.scriptErrors,
           true
         );
