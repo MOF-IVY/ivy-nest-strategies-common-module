@@ -146,6 +146,7 @@ class IvyOperationsManagerBase {
         this.operations[sym].stats = stats;
     }
     async onOpenedOperationConfirm(op) {
+        console.log(`[${op.symbol}] OPEN CONFIRM`);
         for (const sym of Object.keys(this.operations)) {
             if (this.operations[sym].id === op.operationId &&
                 this.operations[sym].pendingOpen) {
@@ -155,6 +156,7 @@ class IvyOperationsManagerBase {
         }
     }
     onClosedOperationConfirm(op) {
+        console.log(`[${op.symbol}] CLOSE CONFIRM`);
         Object.keys(this.operations).forEach((sym) => {
             if (this.operations[sym].id === op.operationId)
                 delete this.operations[sym];

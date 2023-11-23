@@ -203,6 +203,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
   }
 
   protected async onOpenedOperationConfirm(op: ITraderOperation<unknown>) {
+    console.log(`[${op.symbol}] OPEN CONFIRM`);
     for (const sym of Object.keys(this.operations)) {
       if (
         this.operations[sym].id === op.operationId &&
@@ -215,6 +216,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
   }
 
   protected onClosedOperationConfirm(op: ITraderOperation<unknown>): void {
+    console.log(`[${op.symbol}] CLOSE CONFIRM`);
     Object.keys(this.operations).forEach((sym) => {
       if (this.operations[sym].id === op.operationId)
         delete this.operations[sym];
