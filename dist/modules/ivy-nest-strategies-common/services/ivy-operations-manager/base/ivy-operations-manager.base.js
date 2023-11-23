@@ -148,8 +148,7 @@ class IvyOperationsManagerBase {
     async onOpenedOperationConfirm(op) {
         console.log(`[${op.symbol}] OPEN CONFIRM`);
         for (const sym of Object.keys(this.operations)) {
-            if (this.operations[sym].id === op.operationId &&
-                this.operations[sym].pendingOpen) {
+            if (this.operations[sym].id === op.operationId) {
                 this.totalOps++;
                 this.operations[sym].pendingOpen = false;
             }

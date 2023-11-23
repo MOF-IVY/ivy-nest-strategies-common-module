@@ -205,10 +205,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
   protected async onOpenedOperationConfirm(op: ITraderOperation<unknown>) {
     console.log(`[${op.symbol}] OPEN CONFIRM`);
     for (const sym of Object.keys(this.operations)) {
-      if (
-        this.operations[sym].id === op.operationId &&
-        this.operations[sym].pendingOpen
-      ) {
+      if (this.operations[sym].id === op.operationId) {
         this.totalOps++;
         this.operations[sym].pendingOpen = false;
       }
