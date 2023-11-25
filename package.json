@@ -1,6 +1,6 @@
 {
   "name": "@mof-ivy/ivy-nest-strategies-common-module",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Common package for NestJS strategies. It provides a set of useful tools (modules, services, models etc) to easily build strategies in NestJS for Ivy",
   "main": "dist/index.js",
   "scripts": {
