@@ -6,7 +6,7 @@ export class IvyKlinesUtils {
     const HK = IvyKlinesUtils.convertHistoryToHeikinashi(history);
     const closePrice = HK.at(-2)[OHLCVPositions.CLOSE];
     const openPrice = HK.at(-2)[OHLCVPositions.OPEN];
-    console.log(`[HK_GREEN]\t HK CP: ${closePrice};\t OP: ${openPrice}`);
+    // console.log(`[HK_GREEN]\t HK CP: ${closePrice};\t OP: ${openPrice}`);
     return closePrice > openPrice;
   }
 
@@ -14,7 +14,7 @@ export class IvyKlinesUtils {
     const HK = IvyKlinesUtils.convertHistoryToHeikinashi(history);
     const closePrice = HK.at(-2)[OHLCVPositions.CLOSE];
     const openPrice = HK.at(-2)[OHLCVPositions.OPEN];
-    console.log(`[HK_RED]\t HK CP: ${closePrice};\t OP: ${openPrice}`);
+    // console.log(`[HK_RED]\t HK CP: ${closePrice};\t OP: ${openPrice}`);
     return closePrice < openPrice;
   }
 
