@@ -179,7 +179,7 @@ class IvyOperationsManagerBase {
     setupStreamsOrBlock() {
         (0, rxjs_1.combineLatest)([this.sdk.subscribeReady(), this.config.subscribeReady()])
             .pipe((0, rxjs_1.filter)(([sdk, config]) => !!sdk && !!config), (0, rxjs_1.switchMap)(() => {
-            return this.sdk.instance.enableActiveStatsUpdate();
+            return this.sdk.instance.enableActiveOperationsStatsUpdates();
         }), (0, rxjs_1.filter)((error) => {
             if (!!error) {
                 this.logger("Cannot enable active stats update", log_keys_const_1.IvyNestStrategiesCommonLogKeys.scriptFatal, true);
@@ -187,19 +187,19 @@ class IvyOperationsManagerBase {
             }
             return true;
         }), (0, rxjs_1.tap)(() => this.sdk.instance
-            .subscribeActiveStatsUpdates()
+            .subscribeActiveOperationsStatsUpdates()
             .pipe((0, rxjs_1.tap)((event) => this.onActiveStatsUpdate(event)))
             .subscribe()), (0, rxjs_1.tap)(() => this.sdk.instance
-            .subscribeClosedOperationsUpdates()
+            .subscribeClosedOperationsEvents()
             .pipe((0, rxjs_1.tap)((event) => this.onClosedOperationConfirm(event)))
             .subscribe()), (0, rxjs_1.tap)(() => this.sdk.instance
-            .subscribeOpenedOperationsUpdates()
+            .subscribeNewActiveOperationsEvents()
             .pipe((0, rxjs_1.tap)((event) => this.onOpenedOperationConfirm(event)))
             .subscribe()), (0, rxjs_1.tap)(() => this.sdk.instance
-            .subscribeOperationsOpenErrors()
+            .subscribeOperationsOpenErrorsEvents()
             .pipe((0, rxjs_1.tap)((event) => this.onOpenOperationError(event)))
             .subscribe()), (0, rxjs_1.tap)(() => this.sdk.instance
-            .subscribeOperationsCloseErrors()
+            .subscribeOperationsCloseErrorsEvents()
             .pipe((0, rxjs_1.tap)((event) => this.onCloseOperationError(event)))
             .subscribe()), (0, rxjs_1.tap)(() => this.ready$.next(true)))
             .subscribe();

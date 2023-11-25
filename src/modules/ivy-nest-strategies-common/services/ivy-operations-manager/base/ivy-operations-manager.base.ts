@@ -250,7 +250,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
       .pipe(
         filter(([sdk, config]) => !!sdk && !!config),
         switchMap(() => {
-          return this.sdk.instance.enableActiveStatsUpdate();
+          return this.sdk.instance.enableActiveOperationsStatsUpdates();
         }),
         filter((error) => {
           if (!!error) {
@@ -265,31 +265,31 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
         }),
         tap(() =>
           this.sdk.instance
-            .subscribeActiveStatsUpdates()
+            .subscribeActiveOperationsStatsUpdates()
             .pipe(tap((event) => this.onActiveStatsUpdate(event)))
             .subscribe()
         ),
         tap(() =>
           this.sdk.instance
-            .subscribeClosedOperationsUpdates()
+            .subscribeClosedOperationsEvents()
             .pipe(tap((event) => this.onClosedOperationConfirm(event)))
             .subscribe()
         ),
         tap(() =>
           this.sdk.instance
-            .subscribeOpenedOperationsUpdates()
+            .subscribeNewActiveOperationsEvents()
             .pipe(tap((event) => this.onOpenedOperationConfirm(event)))
             .subscribe()
         ),
         tap(() =>
           this.sdk.instance
-            .subscribeOperationsOpenErrors()
+            .subscribeOperationsOpenErrorsEvents()
             .pipe(tap((event) => this.onOpenOperationError(event)))
             .subscribe()
         ),
         tap(() =>
           this.sdk.instance
-            .subscribeOperationsCloseErrors()
+            .subscribeOperationsCloseErrorsEvents()
             .pipe(tap((event) => this.onCloseOperationError(event)))
             .subscribe()
         ),
