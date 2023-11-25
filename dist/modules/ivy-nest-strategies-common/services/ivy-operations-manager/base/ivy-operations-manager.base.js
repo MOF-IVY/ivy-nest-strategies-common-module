@@ -55,7 +55,7 @@ class IvyOperationsManagerBase {
     operationIsPendingClose(sym) {
         return !!this.operations[sym]?.pendingClose;
     }
-    async closeOperation(sym, orderType, reason) {
+    async closeOperation(sym, orderType, limitPrice, reason) {
         let intent;
         if (!this.hasActiveOperation(sym)) {
             intent = `[${sym}] Received close command but no open operation can be found`;
@@ -70,6 +70,7 @@ class IvyOperationsManagerBase {
             const operationId = await this.sdk.instance.closeOperation({
                 orderType,
                 symbol: sym,
+                price: limitPrice,
                 operationType: operation.type,
                 exchangeMarket: this.config.snap.exchangeMarket,
             });
@@ -90,7 +91,7 @@ class IvyOperationsManagerBase {
             this.logger(intent, log_keys_const_1.IvyNestStrategiesCommonLogKeys.scriptErrors, true);
         }
     }
-    async openOperation(sym, opType, orderType, extraProps, reason) {
+    async openOperation(sym, opType, orderType, limitPrice, extraProps, reason) {
         let intent;
         if ((this.config.snap.maxTotalOps !== null &&
             this.totalOps >= this.config.snap.maxTotalOps) ||
@@ -114,6 +115,7 @@ class IvyOperationsManagerBase {
             const operationId = await this.sdk.instance.newOperation({
                 orderType,
                 symbol: sym,
+                price: limitPrice,
                 operationType: opType,
                 isMockOrder: operation.isPaperMode,
                 leverage: this.config.snap.leverage,

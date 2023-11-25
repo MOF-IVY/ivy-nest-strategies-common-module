@@ -82,6 +82,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
   async closeOperation(
     sym: string,
     orderType: "Market" | "Limit",
+    limitPrice?: number,
     reason?: string
   ) {
     let intent: string;
@@ -100,6 +101,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
       const operationId = await this.sdk.instance.closeOperation({
         orderType,
         symbol: sym,
+        price: limitPrice,
         operationType: operation.type,
         exchangeMarket: this.config.snap.exchangeMarket,
       });
@@ -132,6 +134,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
     sym: string,
     opType: ExchangeOperationType,
     orderType: "Market" | "Limit",
+    limitPrice?: number,
     extraProps?: OperationExtraProps,
     reason?: string
   ) {
@@ -162,6 +165,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
       const operationId = await this.sdk.instance.newOperation({
         orderType,
         symbol: sym,
+        price: limitPrice,
         operationType: opType,
         isMockOrder: operation.isPaperMode,
         leverage: this.config.snap.leverage,

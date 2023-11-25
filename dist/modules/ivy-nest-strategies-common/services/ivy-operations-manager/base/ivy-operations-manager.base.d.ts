@@ -24,8 +24,8 @@ export declare abstract class IvyOperationsManagerBase<OperationExtraProps = nul
     getActiveOperationBySym(sym: string): IActiveOperation<OperationExtraProps>;
     operationIsPendingOpen(sym: string): boolean;
     operationIsPendingClose(sym: string): boolean;
-    closeOperation(sym: string, orderType: "Market" | "Limit", reason?: string): Promise<void>;
-    openOperation(sym: string, opType: ExchangeOperationType, orderType: "Market" | "Limit", extraProps?: OperationExtraProps, reason?: string): Promise<void>;
+    closeOperation(sym: string, orderType: "Market" | "Limit", limitPrice?: number, reason?: string): Promise<void>;
+    openOperation(sym: string, opType: ExchangeOperationType, orderType: "Market" | "Limit", limitPrice?: number, extraProps?: OperationExtraProps, reason?: string): Promise<void>;
     protected onActiveStatsUpdate(event: IActiveStatsUpdate): Promise<void>;
     protected onOpenedOperationConfirm(op: ITraderOperation<unknown>): Promise<void>;
     protected onClosedOperationConfirm(op: ITraderOperation<unknown>): void;
