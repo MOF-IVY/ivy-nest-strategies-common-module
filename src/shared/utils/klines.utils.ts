@@ -4,12 +4,18 @@ import { OHLCV, OHLCVPositions } from "@mof-ivy/ivy-node-sdk";
 export class IvyKlinesUtils {
   static previousHeikinashiIsGreen(history: OHLCV[]): boolean {
     const HK = IvyKlinesUtils.convertHistoryToHeikinashi(history);
-    return HK.at(-2)[OHLCVPositions.CLOSE] > HK.at(-2)[OHLCVPositions.OPEN];
+    const closePrice = HK.at(-2)[OHLCVPositions.CLOSE];
+    const openPrice = HK.at(-2)[OHLCVPositions.OPEN];
+    console.log(`[HK_GREEN]\t HK CP: ${closePrice};\t OP: ${openPrice}`);
+    return closePrice > openPrice;
   }
 
   static previousHeikinashiIsRed(history: OHLCV[]): boolean {
     const HK = IvyKlinesUtils.convertHistoryToHeikinashi(history);
-    return HK.at(-2)[OHLCVPositions.CLOSE] < HK.at(-2)[OHLCVPositions.OPEN];
+    const closePrice = HK.at(-2)[OHLCVPositions.CLOSE];
+    const openPrice = HK.at(-2)[OHLCVPositions.OPEN];
+    console.log(`[HK_RED]\t HK CP: ${closePrice};\t OP: ${openPrice}`);
+    return closePrice < openPrice;
   }
 
   static convertHistoryToHeikinashi(klines: OHLCV[]): OHLCV[] {

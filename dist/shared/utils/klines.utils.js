@@ -9,11 +9,17 @@ const ivy_node_sdk_1 = require("@mof-ivy/ivy-node-sdk");
 class IvyKlinesUtils {
     static previousHeikinashiIsGreen(history) {
         const HK = IvyKlinesUtils.convertHistoryToHeikinashi(history);
-        return HK.at(-2)[ivy_node_sdk_1.OHLCVPositions.CLOSE] > HK.at(-2)[ivy_node_sdk_1.OHLCVPositions.OPEN];
+        const closePrice = HK.at(-2)[ivy_node_sdk_1.OHLCVPositions.CLOSE];
+        const openPrice = HK.at(-2)[ivy_node_sdk_1.OHLCVPositions.OPEN];
+        console.log(`[HK_GREEN]\t HK CP: ${closePrice};\t OP: ${openPrice}`);
+        return closePrice > openPrice;
     }
     static previousHeikinashiIsRed(history) {
         const HK = IvyKlinesUtils.convertHistoryToHeikinashi(history);
-        return HK.at(-2)[ivy_node_sdk_1.OHLCVPositions.CLOSE] < HK.at(-2)[ivy_node_sdk_1.OHLCVPositions.OPEN];
+        const closePrice = HK.at(-2)[ivy_node_sdk_1.OHLCVPositions.CLOSE];
+        const openPrice = HK.at(-2)[ivy_node_sdk_1.OHLCVPositions.OPEN];
+        console.log(`[HK_RED]\t HK CP: ${closePrice};\t OP: ${openPrice}`);
+        return closePrice < openPrice;
     }
     static convertHistoryToHeikinashi(klines) {
         return (klines = (0, heikinashi_1.default)(klines.map((k) => ({
