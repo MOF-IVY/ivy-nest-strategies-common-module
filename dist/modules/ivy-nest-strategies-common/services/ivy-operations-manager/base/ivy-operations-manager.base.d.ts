@@ -17,8 +17,8 @@ export declare abstract class IvyOperationsManagerBase<OperationExtraProps = nul
     constructor(sdk: IvySDKService, config: IvyScriptConfigService);
     get activeOperationsCount(): number;
     get isOverMaxConcurrencyCap(): boolean;
-    cancelOpenOrder(operationId: string): boolean;
-    cancelCloseOrder(operationId: string): boolean;
+    cancelOpenOrder(operationId: string): Promise<boolean>;
+    cancelCloseOrder(operationId: string): Promise<boolean>;
     hasActiveOperation(sym: string): boolean;
     getActiveOperationById(id: string): IActiveOperation<OperationExtraProps>;
     getActiveOperationBySym(sym: string): IActiveOperation<OperationExtraProps>;

@@ -26,17 +26,17 @@ class IvyOperationsManagerBase {
             return true;
         return false;
     }
-    cancelOpenOrder(operationId) {
+    async cancelOpenOrder(operationId) {
         const op = this.getActiveOperationById(operationId);
         if (!op)
             return false;
-        this.sdk.instance.cancelOrder(operationId, "open");
+        return this.sdk.instance.cancelOrder(operationId, "open");
     }
-    cancelCloseOrder(operationId) {
+    async cancelCloseOrder(operationId) {
         const op = this.getActiveOperationById(operationId);
         if (!op)
             return false;
-        this.sdk.instance.cancelOrder(operationId, "close");
+        return this.sdk.instance.cancelOrder(operationId, "close");
     }
     hasActiveOperation(sym) {
         return !!this.operations[sym];

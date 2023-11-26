@@ -44,16 +44,16 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
     return false;
   }
 
-  cancelOpenOrder(operationId: string) {
+  async cancelOpenOrder(operationId: string) {
     const op = this.getActiveOperationById(operationId);
     if (!op) return false;
-    this.sdk.instance.cancelOrder(operationId, "open");
+    return this.sdk.instance.cancelOrder(operationId, "open");
   }
 
-  cancelCloseOrder(operationId: string) {
+  async cancelCloseOrder(operationId: string) {
     const op = this.getActiveOperationById(operationId);
     if (!op) return false;
-    this.sdk.instance.cancelOrder(operationId, "close");
+    return this.sdk.instance.cancelOrder(operationId, "close");
   }
 
   hasActiveOperation(sym: string): boolean {
