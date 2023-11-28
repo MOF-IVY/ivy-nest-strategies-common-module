@@ -31,7 +31,7 @@ class IvyOperationsManagerBase {
         if (!op)
             return false;
         try {
-            return this.sdk.instance.cancelOrder(operationId, "open");
+            return await this.sdk.instance.cancelOrder(operationId, "open");
         }
         catch (e) {
             return false;
@@ -42,7 +42,7 @@ class IvyOperationsManagerBase {
         if (!op)
             return false;
         try {
-            return this.sdk.instance.cancelOrder(operationId, "close");
+            return await this.sdk.instance.cancelOrder(operationId, "close");
         }
         catch (e) {
             return false;

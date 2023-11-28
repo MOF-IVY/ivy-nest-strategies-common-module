@@ -48,7 +48,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
     const op = this.getActiveOperationById(operationId);
     if (!op) return false;
     try {
-      return this.sdk.instance.cancelOrder(operationId, "open");
+      return await this.sdk.instance.cancelOrder(operationId, "open");
     } catch (e) {
       return false;
     }
@@ -58,7 +58,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
     const op = this.getActiveOperationById(operationId);
     if (!op) return false;
     try {
-      return this.sdk.instance.cancelOrder(operationId, "close");
+      return await this.sdk.instance.cancelOrder(operationId, "close");
     } catch (e) {
       return false;
     }
