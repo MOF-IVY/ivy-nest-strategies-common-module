@@ -47,6 +47,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
   async cancelOpenOrder(operationId: string) {
     const op = this.getActiveOperationById(operationId);
     if (!op) return false;
+    if (op.pendingOpenCancel) return;
     try {
       return await this.sdk.instance.cancelOrder(operationId, "open");
     } catch (e) {
@@ -57,6 +58,7 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
   async cancelCloseOrder(operationId: string) {
     const op = this.getActiveOperationById(operationId);
     if (!op) return false;
+    if (op.pendingCloseCancel) return;
     try {
       return await this.sdk.instance.cancelOrder(operationId, "close");
     } catch (e) {
@@ -232,6 +234,24 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
     });
   }
 
+  protected onCloseOrderCancelledConfirm(op: ITraderOperation<unknown>): void {
+    console.log(`[${op.symbol}] CLOSE ORDER CANCEL CONFIRM`);
+    Object.keys(this.operations).forEach((sym) => {
+      if (this.operations[sym].id === op.operationId)
+        this.operations[sym].pendingCloseCancel = false;
+    });
+  }
+
+  protected onOpenOrderCancelledConfirm(op: ITraderOperation<unknown>): void {
+    console.log(`[${op.symbol}] OPEN ORDER CANCEL CONFIRM`);
+    Object.keys(this.operations).forEach((sym) => {
+      if (this.operations[sym].id === op.operationId) {
+        this.operations[sym].pendingOpenCancel = false;
+        delete this.operations[sym];
+      }
+    });
+  }
+
   protected onCloseOperationError(id: string): void {
     Object.keys(this.operations).forEach((sym) => {
       if (this.operations[sym].id === id)
@@ -303,6 +323,18 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
           this.sdk.instance
             .subscribeOperationsCloseErrorsEvents()
             .pipe(tap((event) => this.onCloseOperationError(event)))
+            .subscribe()
+        ),
+        tap(() =>
+          this.sdk.instance
+            .subscribeCancelledOpenOrdersEvents()
+            .pipe(tap((event) => this.onOpenOrderCancelledConfirm(event)))
+            .subscribe()
+        ),
+        tap(() =>
+          this.sdk.instance
+            .subscribeCancelledCloseOrdersEvents()
+            .pipe(tap((event) => this.onCloseOrderCancelledConfirm(event)))
             .subscribe()
         ),
         tap(() => this.ready$.next(true))

@@ -4,6 +4,8 @@ export interface IActiveOperation<AdditionalProps = null> {
     pendingOpen?: boolean;
     isPaperMode?: boolean;
     pendingClose?: boolean;
+    pendingOpenCancel?: boolean;
+    pendingCloseCancel?: boolean;
     stats: IOperationStats;
     type: ExchangeOperationType;
     /**

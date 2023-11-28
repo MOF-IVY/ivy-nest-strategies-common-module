@@ -29,6 +29,8 @@ export declare abstract class IvyOperationsManagerBase<OperationExtraProps = nul
     protected onActiveStatsUpdate(event: IActiveStatsUpdate): Promise<void>;
     protected onOpenedOperationConfirm(op: ITraderOperation<unknown>): Promise<void>;
     protected onClosedOperationConfirm(op: ITraderOperation<unknown>): void;
+    protected onCloseOrderCancelledConfirm(op: ITraderOperation<unknown>): void;
+    protected onOpenOrderCancelledConfirm(op: ITraderOperation<unknown>): void;
     protected onCloseOperationError(id: string): void;
     protected onOpenOperationError(id: string): void;
     protected setupStreamsOrBlock(): void;

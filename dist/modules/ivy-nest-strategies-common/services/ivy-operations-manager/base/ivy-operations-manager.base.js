@@ -30,6 +30,8 @@ class IvyOperationsManagerBase {
         const op = this.getActiveOperationById(operationId);
         if (!op)
             return false;
+        if (op.pendingOpenCancel)
+            return;
         try {
             return await this.sdk.instance.cancelOrder(operationId, "open");
         }
@@ -41,6 +43,8 @@ class IvyOperationsManagerBase {
         const op = this.getActiveOperationById(operationId);
         if (!op)
             return false;
+        if (op.pendingCloseCancel)
+            return;
         try {
             return await this.sdk.instance.cancelOrder(operationId, "close");
         }
@@ -173,6 +177,22 @@ class IvyOperationsManagerBase {
                 delete this.operations[sym];
         });
     }
+    onCloseOrderCancelledConfirm(op) {
+        console.log(`[${op.symbol}] CLOSE ORDER CANCEL CONFIRM`);
+        Object.keys(this.operations).forEach((sym) => {
+            if (this.operations[sym].id === op.operationId)
+                this.operations[sym].pendingCloseCancel = false;
+        });
+    }
+    onOpenOrderCancelledConfirm(op) {
+        console.log(`[${op.symbol}] OPEN ORDER CANCEL CONFIRM`);
+        Object.keys(this.operations).forEach((sym) => {
+            if (this.operations[sym].id === op.operationId) {
+                this.operations[sym].pendingOpenCancel = false;
+                delete this.operations[sym];
+            }
+        });
+    }
     onCloseOperationError(id) {
         Object.keys(this.operations).forEach((sym) => {
             if (this.operations[sym].id === id)
@@ -213,6 +233,12 @@ class IvyOperationsManagerBase {
             .subscribe()), (0, rxjs_1.tap)(() => this.sdk.instance
             .subscribeOperationsCloseErrorsEvents()
             .pipe((0, rxjs_1.tap)((event) => this.onCloseOperationError(event)))
+            .subscribe()), (0, rxjs_1.tap)(() => this.sdk.instance
+            .subscribeCancelledOpenOrdersEvents()
+            .pipe((0, rxjs_1.tap)((event) => this.onOpenOrderCancelledConfirm(event)))
+            .subscribe()), (0, rxjs_1.tap)(() => this.sdk.instance
+            .subscribeCancelledCloseOrdersEvents()
+            .pipe((0, rxjs_1.tap)((event) => this.onCloseOrderCancelledConfirm(event)))
             .subscribe()), (0, rxjs_1.tap)(() => this.ready$.next(true)))
             .subscribe();
     }
