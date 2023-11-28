@@ -39,6 +39,10 @@ export class IvyStrongestPresenceServiceBase {
     this.setupStreamsOrBlock();
   }
 
+  set loggingMode(mode: LogModes) {
+    this.logMode = mode;
+  }
+
   subscribeReady() {
     return this.ready$.asObservable();
   }

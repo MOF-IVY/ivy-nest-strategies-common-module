@@ -18,6 +18,9 @@ class IvyStrongestPresenceServiceBase {
         this.logger = this.sdk.instance.log.bind(this.sdk.instance);
         this.setupStreamsOrBlock();
     }
+    set loggingMode(mode) {
+        this.logMode = mode;
+    }
     subscribeReady() {
         return this.ready$.asObservable();
     }

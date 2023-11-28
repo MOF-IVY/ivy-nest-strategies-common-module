@@ -14,6 +14,7 @@ export declare class IvyStrongestPresenceServiceBase {
     protected readonly ready$: BehaviorSubject<boolean>;
     protected readonly logger: (message: object | string, logKey: string, persist?: boolean) => Promise<boolean | IStandardWsError>;
     constructor(sdk: IvySDKService, config: IvyScriptConfigService<IIvyScriptInitialConfig>);
+    set loggingMode(mode: LogModes);
     subscribeReady(): import("rxjs").Observable<boolean>;
     subscribeLongCandidatesChanges(): import("rxjs").Observable<string[]>;
     subscribeShortCandidatesChanges(): import("rxjs").Observable<string[]>;
