@@ -28,7 +28,8 @@ export class IvyStrongestPresenceServiceBase {
   protected readonly logger: (
     message: object | string,
     logKey: string,
-    persist?: boolean
+    persist?: boolean,
+    logToConsole?: boolean
   ) => Promise<boolean | IStandardWsError>;
 
   constructor(
@@ -113,13 +114,13 @@ export class IvyStrongestPresenceServiceBase {
       this.candidatesListHasChanged(
         this.longCandidates$.getValue(),
         newCandidates
-      ) &&
-      this.logMode === LogModes.verbose
+      )
     ) {
       this.logger(
         newCandidates.toString(),
         IvyNestStrategiesCommonLogKeys.longCandidates,
-        true
+        true,
+        this.logMode === LogModes.verbose
       );
     }
 
@@ -142,13 +143,13 @@ export class IvyStrongestPresenceServiceBase {
       this.candidatesListHasChanged(
         this.shortCandidates$.getValue(),
         newCandidates
-      ) &&
-      this.logMode === LogModes.verbose
+      )
     ) {
       this.logger(
         newCandidates.toString(),
         IvyNestStrategiesCommonLogKeys.shortCandidates,
-        true
+        true,
+        this.logMode === LogModes.verbose
       );
     }
 
@@ -197,14 +198,12 @@ export class IvyStrongestPresenceServiceBase {
       )
     );
 
-    if (
-      this.candidatesListHasChanged(oldCandidates, newCandidates) &&
-      this.logMode === LogModes.verbose
-    ) {
+    if (this.candidatesListHasChanged(oldCandidates, newCandidates)) {
       this.logger(
         newCandidates,
         IvyNestStrategiesCommonLogKeys.longCandidates,
-        true
+        true,
+        this.logMode === LogModes.verbose
       );
     }
 
@@ -232,14 +231,12 @@ export class IvyStrongestPresenceServiceBase {
       )
     );
 
-    if (
-      this.candidatesListHasChanged(oldCandidates, newCandidates) &&
-      this.logMode === LogModes.verbose
-    ) {
+    if (this.candidatesListHasChanged(oldCandidates, newCandidates)) {
       this.logger(
         newCandidates,
         IvyNestStrategiesCommonLogKeys.shortCandidates,
-        true
+        true,
+        this.logMode === LogModes.verbose
       );
     }
 

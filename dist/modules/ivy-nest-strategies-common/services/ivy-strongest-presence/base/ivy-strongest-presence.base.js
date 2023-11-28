@@ -62,9 +62,8 @@ class IvyStrongestPresenceServiceBase {
         const rankings = this.getRequiredTFsRankings(this.config.snap.pumpTFs, event, this.config.snap.pumpingSymbolsPerTF);
         const distinctSymsInRankings = this.TFsRankingsToDistinctSymbols(rankings);
         const newCandidates = this.getStrongestPresenceNewCandidates(distinctSymsInRankings, rankings);
-        if (this.candidatesListHasChanged(this.longCandidates$.getValue(), newCandidates) &&
-            this.logMode === log_modes_enum_1.LogModes.verbose) {
-            this.logger(newCandidates.toString(), log_keys_const_1.IvyNestStrategiesCommonLogKeys.longCandidates, true);
+        if (this.candidatesListHasChanged(this.longCandidates$.getValue(), newCandidates)) {
+            this.logger(newCandidates.toString(), log_keys_const_1.IvyNestStrategiesCommonLogKeys.longCandidates, true, this.logMode === log_modes_enum_1.LogModes.verbose);
         }
         this.longCandidates$.next(newCandidates);
     }
@@ -72,9 +71,8 @@ class IvyStrongestPresenceServiceBase {
         const rankings = this.getRequiredTFsRankings(this.config.snap.dumpTFs, event, this.config.snap.dumpingSymbolsPerTF);
         const distinctSymsInRankings = this.TFsRankingsToDistinctSymbols(rankings);
         const newCandidates = this.getStrongestPresenceNewCandidates(distinctSymsInRankings, rankings);
-        if (this.candidatesListHasChanged(this.shortCandidates$.getValue(), newCandidates) &&
-            this.logMode === log_modes_enum_1.LogModes.verbose) {
-            this.logger(newCandidates.toString(), log_keys_const_1.IvyNestStrategiesCommonLogKeys.shortCandidates, true);
+        if (this.candidatesListHasChanged(this.shortCandidates$.getValue(), newCandidates)) {
+            this.logger(newCandidates.toString(), log_keys_const_1.IvyNestStrategiesCommonLogKeys.shortCandidates, true, this.logMode === log_modes_enum_1.LogModes.verbose);
         }
         this.shortCandidates$.next(newCandidates);
     }
@@ -96,9 +94,8 @@ class IvyStrongestPresenceServiceBase {
             return;
         const oldCandidates = this.longCandidates$.getValue();
         const newCandidates = this.TFsRankingsToDistinctSymbols(this.getRequiredTFsRankings(this.config.snap.pumpTFs, event, this.config.snap.pumpingSymbolsPerTF));
-        if (this.candidatesListHasChanged(oldCandidates, newCandidates) &&
-            this.logMode === log_modes_enum_1.LogModes.verbose) {
-            this.logger(newCandidates, log_keys_const_1.IvyNestStrategiesCommonLogKeys.longCandidates, true);
+        if (this.candidatesListHasChanged(oldCandidates, newCandidates)) {
+            this.logger(newCandidates, log_keys_const_1.IvyNestStrategiesCommonLogKeys.longCandidates, true, this.logMode === log_modes_enum_1.LogModes.verbose);
         }
         this.longCandidates$.next(newCandidates);
     }
@@ -110,9 +107,8 @@ class IvyStrongestPresenceServiceBase {
             return;
         const oldCandidates = this.shortCandidates$.getValue();
         const newCandidates = this.TFsRankingsToDistinctSymbols(this.getRequiredTFsRankings(this.config.snap.dumpTFs, event, this.config.snap.dumpingSymbolsPerTF));
-        if (this.candidatesListHasChanged(oldCandidates, newCandidates) &&
-            this.logMode === log_modes_enum_1.LogModes.verbose) {
-            this.logger(newCandidates, log_keys_const_1.IvyNestStrategiesCommonLogKeys.shortCandidates, true);
+        if (this.candidatesListHasChanged(oldCandidates, newCandidates)) {
+            this.logger(newCandidates, log_keys_const_1.IvyNestStrategiesCommonLogKeys.shortCandidates, true, this.logMode === log_modes_enum_1.LogModes.verbose);
         }
         this.shortCandidates$.next(newCandidates);
     }
