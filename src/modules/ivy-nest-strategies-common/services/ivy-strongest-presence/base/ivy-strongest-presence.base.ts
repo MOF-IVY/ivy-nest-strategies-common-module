@@ -16,8 +16,10 @@ import { IvyNestStrategiesCommonLogKeys } from "../../../../../shared/constants/
 import { IvySDKService } from "../../ivy-sdk/ivy-sdk.service";
 import { IvyScriptConfigService } from "../../ivy-script-config/ivy-script-config.service";
 import { IIvyScriptInitialConfig } from "../../ivy-script-config/models/initial-script-config.model";
+import { LogModes } from "../../../../../shared/enums/log-modes.enum";
 
 export class IvyStrongestPresenceServiceBase {
+  protected logMode = LogModes.verbose;
   protected longCandidates$ = new BehaviorSubject<string[]>([]);
   protected shortCandidates$ = new BehaviorSubject<string[]>([]);
 
@@ -107,7 +109,8 @@ export class IvyStrongestPresenceServiceBase {
       this.candidatesListHasChanged(
         this.longCandidates$.getValue(),
         newCandidates
-      )
+      ) &&
+      this.logMode === LogModes.verbose
     ) {
       this.logger(
         newCandidates.toString(),
@@ -135,7 +138,8 @@ export class IvyStrongestPresenceServiceBase {
       this.candidatesListHasChanged(
         this.shortCandidates$.getValue(),
         newCandidates
-      )
+      ) &&
+      this.logMode === LogModes.verbose
     ) {
       this.logger(
         newCandidates.toString(),
@@ -189,7 +193,10 @@ export class IvyStrongestPresenceServiceBase {
       )
     );
 
-    if (this.candidatesListHasChanged(oldCandidates, newCandidates)) {
+    if (
+      this.candidatesListHasChanged(oldCandidates, newCandidates) &&
+      this.logMode === LogModes.verbose
+    ) {
       this.logger(
         newCandidates,
         IvyNestStrategiesCommonLogKeys.longCandidates,
@@ -221,7 +228,10 @@ export class IvyStrongestPresenceServiceBase {
       )
     );
 
-    if (this.candidatesListHasChanged(oldCandidates, newCandidates)) {
+    if (
+      this.candidatesListHasChanged(oldCandidates, newCandidates) &&
+      this.logMode === LogModes.verbose
+    ) {
       this.logger(
         newCandidates,
         IvyNestStrategiesCommonLogKeys.shortCandidates,

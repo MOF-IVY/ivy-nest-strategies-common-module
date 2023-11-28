@@ -4,9 +4,11 @@ import { IStandardWsError } from "@mof-ivy/ivy-node-sdk/dist/core/services/base/
 import { IvySDKService } from "../../ivy-sdk/ivy-sdk.service";
 import { IvyScriptConfigService } from "../../ivy-script-config/ivy-script-config.service";
 import { IIvyScriptInitialConfig } from "../../ivy-script-config/models/initial-script-config.model";
+import { LogModes } from "../../../../../shared/enums/log-modes.enum";
 export declare class IvyStrongestPresenceServiceBase {
     protected readonly sdk: IvySDKService;
     protected readonly config: IvyScriptConfigService<IIvyScriptInitialConfig>;
+    protected logMode: LogModes;
     protected longCandidates$: BehaviorSubject<string[]>;
     protected shortCandidates$: BehaviorSubject<string[]>;
     protected readonly ready$: BehaviorSubject<boolean>;
