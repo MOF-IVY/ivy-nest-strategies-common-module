@@ -110,10 +110,8 @@ export abstract class IvyOperationsManagerBase<OperationExtraProps = null> {
     try {
       const operationId = await this.sdk.instance.closeOperation({
         orderType,
-        symbol: sym,
         price: limitPrice,
-        operationType: operation.type,
-        exchangeMarket: this.config.snap.exchangeMarket,
+        operationId: operation.id,
       });
 
       if (operationId === null) {
